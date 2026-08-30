@@ -5,27 +5,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Remainders — Support &amp; Privacy</title>
 <style>
-  :root { --bg:#f5f5f7; --card:#ffffff; --text:#1d1d1f; --muted:#6e6e73; --accent:#5b5bd6; --line:#e3e3e8; }
+  :root {
+    --card:#ffffff; --text:#1d1d1f; --muted:#6e6e73; --accent:#6a5cff; --line:#e7e7ee;
+    --bg1:#eef0ff; --bg2:#f7f5ff; --bg3:#eafaf4;
+  }
   @media (prefers-color-scheme: dark) {
-    :root { --bg:#000; --card:#1c1c1e; --text:#f5f5f7; --muted:#a1a1a6; --accent:#8f8ff0; --line:#2c2c2e; }
+    :root {
+      --card:#161618; --text:#f5f5f7; --muted:#9a9aa2; --accent:#9d8cff; --line:#2a2a30;
+      --bg1:#141225; --bg2:#0c0c14; --bg3:#0e1a1a;
+    }
   }
   * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--text);
+  body { margin:0; color:var(--text);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.55; -webkit-font-smoothing:antialiased; }
-  .wrap { max-width:760px; margin:0 auto; padding:24px 20px 80px; }
-  header { text-align:center; padding:16px 0 8px; }
-  header h1 { font-size:2rem; margin:0 0 6px; }
-  header p { color:var(--muted); margin:0; }
-  .lang-switch { display:flex; justify-content:center; gap:8px; margin:18px 0 6px; flex-wrap:wrap; }
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+    background:
+      radial-gradient(1200px 600px at 15% -5%, var(--bg1), transparent 60%),
+      radial-gradient(1000px 700px at 100% 0%, var(--bg3), transparent 55%),
+      var(--bg2);
+    background-attachment: fixed;
+    min-height:100vh;
+  }
+  .wrap { max-width:820px; margin:0 auto; padding:28px 20px 90px; }
+  header { text-align:center; padding:8px 0 4px; }
+  .brand { display:flex; align-items:center; justify-content:center; gap:14px; }
+  .logo { width:64px; height:64px; border-radius:15px; box-shadow:0 8px 24px rgba(0,0,0,.18); }
+  header h1 { font-size:2.1rem; margin:0; letter-spacing:-.02em; }
+  .tagline { color:var(--muted); margin:8px 0 0; }
+  .lang-switch { display:flex; justify-content:center; gap:8px; margin:20px 0 6px; flex-wrap:wrap; }
   .lang-switch button { font:inherit; font-size:.9rem; font-weight:600; cursor:pointer;
     color:var(--text); background:var(--card); border:1px solid var(--line);
     border-radius:999px; padding:7px 16px; transition:all .15s; }
   .lang-switch button:hover { border-color:var(--accent); }
   .lang-switch button.active { background:var(--accent); border-color:var(--accent); color:#fff; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 24px; margin:18px 0; }
-  h2 { font-size:1.35rem; margin:28px 4px 8px; }
-  h3 { font-size:1.05rem; margin:20px 0 6px; }
+
+  /* device hero */
+  .hero { display:flex; align-items:flex-end; justify-content:center; gap:20px; flex-wrap:wrap; margin:26px 0 6px; }
+  .hero img { border-radius:14px; box-shadow:0 18px 50px rgba(0,0,0,.28); display:block; }
+  .hero .phone { height:290px; }
+  .hero .pad   { height:230px; }
+  .hero .mac   { height:210px; }
+  @media (max-width:560px){ .hero .phone{height:220px} .hero .pad{height:170px} .hero .mac{height:160px} }
+
+  .card { background:var(--card); border:1px solid var(--line); border-radius:18px;
+    padding:22px 24px; margin:18px 0; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+  h2 { font-size:1.35rem; margin:34px 4px 10px; }
   p, li { color:var(--text); }
   .muted { color:var(--muted); }
   a { color:var(--accent); text-decoration:none; }
@@ -33,7 +57,20 @@
   code { background:rgba(127,127,127,.15); padding:1px 5px; border-radius:5px; font-size:.9em; }
   .email { display:inline-block; font-weight:600; }
   hr { border:none; border-top:1px solid var(--line); margin:32px 0; }
-  footer { text-align:center; color:var(--muted); font-size:.85rem; margin-top:40px; }
+  footer { text-align:center; color:var(--muted); font-size:.85rem; margin-top:44px; }
+
+  /* FAQ accordion */
+  details { background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:0 18px; margin:10px 0; overflow:hidden; }
+  details[open] { box-shadow:0 6px 20px rgba(0,0,0,.06); }
+  summary { list-style:none; cursor:pointer; font-weight:600; font-size:1.02rem;
+    padding:15px 30px 15px 0; position:relative; }
+  summary::-webkit-details-marker { display:none; }
+  summary::after { content:"+"; position:absolute; right:2px; top:50%; transform:translateY(-50%);
+    font-size:1.3rem; font-weight:400; color:var(--muted); transition:transform .2s; }
+  details[open] summary::after { content:"−"; }
+  details > p { margin:0 0 16px; color:var(--text); }
+
   .lang { display:none; }
   .lang.active { display:block; }
 </style>
@@ -42,14 +79,23 @@
 <div class="wrap">
 
   <header>
-    <h1>Remainders</h1>
-    <p>Support &amp; Privacy</p>
+    <div class="brand">
+      <img class="logo" src="assets/icon.png" alt="Remainders icon" onerror="this.remove()" />
+      <h1>Remainders</h1>
+    </div>
+    <p class="tagline">Support &amp; Privacy</p>
     <div class="lang-switch">
       <button data-lang="en" onclick="setLang('en')">English</button>
       <button data-lang="pt" onclick="setLang('pt')">Português</button>
       <button data-lang="es" onclick="setLang('es')">Español</button>
     </div>
   </header>
+
+  <div class="hero">
+    <img class="mac"   src="assets/hero-mac.png"    alt="Remainders on Mac"    onerror="this.remove()" />
+    <img class="phone" src="assets/hero-iphone.png" alt="Remainders on iPhone" onerror="this.remove()" />
+    <img class="pad"   src="assets/hero-ipad.png"   alt="Remainders on iPad"   onerror="this.remove()" />
+  </div>
 
   <!-- ================= ENGLISH ================= -->
   <div class="lang" id="lang-en">
@@ -60,64 +106,67 @@
 
     <h2>Frequently Asked Questions</h2>
 
-    <h3>How does Remainders store my data?</h3>
-    <p>Everything you add — bills, incomes, and goals — is saved as tasks in a dedicated list inside Apple's <strong>Reminders</strong> app. Remainders has no account, no servers, and no separate database. Your data lives in Reminders and syncs across your devices through <strong>your own iCloud</strong>, exactly like your other reminders. To remove all your Remainders data, delete its Reminders list.</p>
+    <details><summary>How does Remainders store my data?</summary>
+    <p>Everything you add — bills, incomes, and goals — is saved as tasks in a dedicated list inside Apple's <strong>Reminders</strong> app. Remainders has no account, no servers, and no separate database. Your data lives in Reminders and syncs across your devices through <strong>your own iCloud</strong>, exactly like your other reminders. To remove all your Remainders data, delete its Reminders list.</p></details>
 
-    <h3>Is my financial data private?</h3>
-    <p>Yes. Remainders <strong>collects nothing</strong>. There's no login, no analytics, no advertising, and no third‑party services. Your information never leaves your device except through the iCloud sync you already use for Reminders (managed by Apple, not by us).</p>
+    <details><summary>Is my financial data private?</summary>
+    <p>Yes. Remainders <strong>collects nothing</strong>. There's no login, no analytics, no advertising, and no third‑party services. Your information never leaves your device except through the iCloud sync you already use for Reminders (managed by Apple, not by us).</p></details>
 
-    <h3>Why does the app need access to Reminders?</h3>
-    <p>That's how it works — Remainders reads and writes your bills/incomes/goals as tasks in a Reminders list. It only touches the list you choose. You can revoke access anytime in Settings → Privacy &amp; Security → Reminders.</p>
+    <details><summary>Why does the app need access to Reminders?</summary>
+    <p>That's how it works — Remainders reads and writes your bills/incomes/goals as tasks in a Reminders list. It only touches the list you choose. You can revoke access anytime in Settings → Privacy &amp; Security → Reminders.</p></details>
 
-    <h3>I completed a recurring bill and the next one skipped a month. Why?</h3>
-    <p>Recurring items use Reminders' own scheduling. When you complete a repeating bill, Reminders advances it to the <strong>next occurrence in the future</strong>. If you complete it <em>after</em> an occurrence's date has already passed, that occurrence is skipped. Tip: complete bills on time (the <strong>Overdue</strong> badge helps you spot ones that are due) to avoid skips.</p>
+    <details><summary>I completed a recurring bill and the next one skipped a month. Why?</summary>
+    <p>Recurring items use Reminders' own scheduling. When you complete a repeating bill, Reminders advances it to the <strong>next occurrence in the future</strong>. If you complete it <em>after</em> an occurrence's date has already passed, that occurrence is skipped. Tip: complete bills on time (the <strong>Overdue</strong> badge helps you spot ones that are due) to avoid skips.</p></details>
 
-    <h3>If I un-check a completed recurring bill, why doesn't it come back as recurring?</h3>
-    <p>When you complete a recurring bill, Reminders does two things at once: it marks that occurrence as done (a standalone, completed item) and it schedules the <strong>next</strong> occurrence of the series. So if you later un-check that completed item, it comes back as a <strong>single, one-time task</strong> — not a recurring one — because the recurring series has already moved on to its next date. You'll typically see your active recurring bill <em>and</em> this one-off; if you don't need the one-off, just delete it. This is how Apple's Reminders handles recurrence, and Remainders mirrors it.</p>
+    <details><summary>If I un-check a completed recurring bill, why doesn't it come back as recurring?</summary>
+    <p>When you complete a recurring bill, Reminders does two things at once: it marks that occurrence as done (a standalone, completed item) and it schedules the <strong>next</strong> occurrence of the series. So if you later un-check that completed item, it comes back as a <strong>single, one-time task</strong> — not a recurring one — because the recurring series has already moved on to its next date. You'll typically see your active recurring bill <em>and</em> this one-off; if you don't need the one-off, just delete it. This is how Apple's Reminders handles recurrence, and Remainders mirrors it.</p></details>
 
-    <h3>What happens if I un-check a completed income or goal deposit?</h3>
-    <p>An income returns to your active list as not received (same one-off behavior as above for recurring ones). For <strong>goals</strong>, completing an occurrence records a deposit — to undo it, delete that deposit from the goal's deposit history, which subtracts it from the saved total.</p>
+    <details><summary>What happens if I un-check a completed income or goal deposit?</summary>
+    <p>An income returns to your active list as not received (same one-off behavior as above for recurring ones). For <strong>goals</strong>, completing an occurrence records a deposit — to undo it, delete that deposit from the goal's deposit history, which subtracts it from the saved total.</p></details>
 
-    <h3>My amounts changed format after I switched region.</h3>
-    <p>Currency, dates, and number formatting follow your <strong>device Region</strong>. When you change region, Remainders updates its entries to match your new format. This is expected — your values are unchanged, only the formatting.</p>
+    <details><summary>My amounts changed format after I switched region.</summary>
+    <p>Currency, dates, and number formatting follow your <strong>device Region</strong>. When you change region, Remainders updates its entries to match your new format. This is expected — your values are unchanged, only the formatting.</p></details>
 
-    <h3>Can I edit my bills directly in the Reminders app?</h3>
-    <p>Yes — you can check items off, rename them, or change dates in Reminders, and Remainders will pick up the changes (and vice versa). The one thing to avoid is hand‑editing the <strong>amount in a task's title</strong> or the <code>[Remainders]</code> line in its notes — that's where each entry's value and settings are stored.</p>
+    <details><summary>Can I edit my bills directly in the Reminders app?</summary>
+    <p>Yes — you can check items off, rename them, or change dates in Reminders, and Remainders will pick up the changes (and vice versa). The one thing to avoid is hand‑editing the <strong>amount in a task's title</strong> or the <code>[Remainders]</code> line in its notes — that's where each entry's value and settings are stored.</p></details>
 
-    <h3>Why are some rows dimmed and can't be checked off?</h3>
-    <p>Those are <strong>projected</strong> future occurrences of your recurring bills/incomes — previews, not real tasks yet. They become real (and checkable) as their date arrives.</p>
+    <details><summary>Why are some rows dimmed and can't be checked off?</summary>
+    <p>Those are <strong>projected</strong> future occurrences of your recurring bills/incomes — previews, not real tasks yet. They become real (and checkable) as their date arrives.</p></details>
 
-    <h3>How do billing cycles work?</h3>
-    <p>A billing cycle is the window Remainders groups everything into (monthly, weekly, every 2 weeks, every 15 days, or a custom interval). Set it to match your payday. It drives what's still to pay before your next income, what's overdue, and what remains after your dues.</p>
+    <details><summary>How do billing cycles work?</summary>
+    <p>A billing cycle is the window Remainders groups everything into (monthly, weekly, every 2 weeks, every 15 days, or a custom interval). Set it to match your payday. It drives what's still to pay before your next income, what's overdue, and what remains after your dues.</p></details>
 
-    <h3>When do notifications arrive?</h3>
-    <p>Notifications are delivered by the <strong>Reminders</strong> app. By default you're alerted at 9:00 AM on the due date; set a custom time per entry if you prefer.</p>
+    <details><summary>When do notifications arrive?</summary>
+    <p>Notifications are delivered by the <strong>Reminders</strong> app. By default you're alerted at 9:00 AM on the due date; set a custom time per entry if you prefer.</p></details>
 
-    <h3>Does it work on all my devices?</h3>
-    <p>Yes — because your data is in Reminders + iCloud, it syncs to your iPhone, iPad, and Mac automatically. The widget shows your current cycle at a glance.</p>
+    <details><summary>Does it work on all my devices?</summary>
+    <p>Yes — because your data is in Reminders + iCloud, it syncs to your iPhone, iPad, and Mac automatically. The widget shows your current cycle at a glance.</p></details>
 
-    <h3>The widget looks out of date.</h3>
-    <p>Widgets refresh periodically. Open the app once to force a refresh, or remove and re‑add the widget if it still looks stale.</p>
+    <details><summary>The widget looks out of date.</summary>
+    <p>Widgets refresh periodically. Open the app once to force a refresh, or remove and re‑add the widget if it still looks stale.</p></details>
 
-    <h3>Does Remainders depend on Apple's Reminders?</h3>
-    <p>Yes. Remainders is built on Apple's <strong>EventKit</strong> framework and the <strong>Reminders</strong> app, which are provided and maintained by Apple. Storing your data, syncing it across devices (via iCloud), scheduling recurrence, and delivering notifications are all handled by Reminders/iCloud — not by Remainders. If Apple changes how those work, or if Reminders or iCloud sync has a hiccup, it can affect the app. We keep Remainders updated to work smoothly with the latest system versions.</p>
+    <details><summary>Does Remainders depend on Apple's Reminders?</summary>
+    <p>Yes. Remainders is built on Apple's <strong>EventKit</strong> framework and the <strong>Reminders</strong> app, which are provided and maintained by Apple. Storing your data, syncing it across devices (via iCloud), scheduling recurrence, and delivering notifications are all handled by Reminders/iCloud — not by Remainders. If Apple changes how those work, or if Reminders or iCloud sync has a hiccup, it can affect the app. We keep Remainders updated to work smoothly with the latest system versions.</p></details>
 
     <hr />
     <h2>Privacy Policy</h2>
-    <p class="muted"><strong>Effective date:</strong> [date]</p>
-    <p>Remainders ("the app") is designed to be private by default.</p>
-    <ul>
-      <li><strong>No data collection.</strong> We do not collect, transmit, sell, or share any personal or financial information. The app has no accounts and no servers operated by us.</li>
-      <li><strong>Where your data lives.</strong> All content you create is stored as tasks in Apple's Reminders app on your device and synced via your personal iCloud account (governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>). We have no access to it.</li>
-      <li><strong>Permissions.</strong> The app requests access to Reminders solely to read and write the bills, incomes, and goals you enter. You can revoke this anytime in system Settings.</li>
-      <li><strong>No tracking or ads.</strong> The app contains no analytics, no advertising, and no third‑party tracking SDKs.</li>
-      <li><strong>Children.</strong> The app does not knowingly collect any data from anyone, including children.</li>
-    </ul>
-    <p>If you have any questions about privacy, contact <a href="mailto:remainders.support@icloud.com">remainders.support@icloud.com</a>.</p>
+    <div class="card">
+      <p class="muted"><strong>Effective date:</strong> September 2026</p>
+      <p>Remainders ("the app") is designed to be private by default.</p>
+      <ul>
+        <li><strong>No data collection.</strong> We do not collect, transmit, sell, or share any personal or financial information. The app has no accounts and no servers operated by us.</li>
+        <li><strong>Where your data lives.</strong> All content you create is stored as tasks in Apple's Reminders app on your device and synced via your personal iCloud account (governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>). We have no access to it.</li>
+        <li><strong>Permissions.</strong> The app requests access to Reminders solely to read and write the bills, incomes, and goals you enter. You can revoke this anytime in system Settings.</li>
+        <li><strong>No tracking or ads.</strong> The app contains no analytics, no advertising, and no third‑party tracking SDKs.</li>
+        <li><strong>Children.</strong> The app does not knowingly collect any data from anyone, including children.</li>
+      </ul>
+      <p>If you have any questions about privacy, contact <a href="mailto:remainders.support@icloud.com">remainders.support@icloud.com</a>.</p>
+    </div>
 
-    <hr />
     <h2>Disclaimer</h2>
-    <p>Remainders relies on Apple's <strong>Reminders</strong> app, the <strong>EventKit</strong> framework, and <strong>iCloud</strong> to store your data, sync it across devices, schedule recurring items, and deliver notifications. These services are provided and controlled by Apple. Remainders is not responsible for data loss, sync delays or conflicts, missed or duplicated notifications, or other issues caused by Apple's services, iCloud, or changes to iOS, iPadOS, or macOS. For anything important, please keep your own separate records.</p>
+    <div class="card">
+      <p>Remainders relies on Apple's <strong>Reminders</strong> app, the <strong>EventKit</strong> framework, and <strong>iCloud</strong> to store your data, sync it across devices, schedule recurring items, and deliver notifications. These services are provided and controlled by Apple. Remainders is not responsible for data loss, sync delays or conflicts, missed or duplicated notifications, or other issues caused by Apple's services, iCloud, or changes to iOS, iPadOS, or macOS. For anything important, please keep your own separate records.</p>
+    </div>
   </div>
 
   <!-- ================= PORTUGUÊS (pt-BR) ================= -->
@@ -129,64 +178,67 @@
 
     <h2>Perguntas frequentes</h2>
 
-    <h3>Como o Remainders guarda meus dados?</h3>
-    <p>Tudo o que você adiciona — contas, receitas e metas — é salvo como tarefas em uma lista dedicada dentro do app <strong>Lembretes</strong> da Apple. O Remainders não tem conta, servidores nem banco de dados próprio. Seus dados ficam no Lembretes e sincronizam entre seus aparelhos pelo <strong>seu próprio iCloud</strong>, igual aos seus outros lembretes. Para remover todos os seus dados do Remainders, exclua a lista dele no Lembretes.</p>
+    <details><summary>Como o Remainders guarda meus dados?</summary>
+    <p>Tudo o que você adiciona — contas, receitas e metas — é salvo como tarefas em uma lista dedicada dentro do app <strong>Lembretes</strong> da Apple. O Remainders não tem conta, servidores nem banco de dados próprio. Seus dados ficam no Lembretes e sincronizam entre seus aparelhos pelo <strong>seu próprio iCloud</strong>, igual aos seus outros lembretes. Para remover todos os seus dados do Remainders, exclua a lista dele no Lembretes.</p></details>
 
-    <h3>Meus dados financeiros são privados?</h3>
-    <p>Sim. O Remainders <strong>não coleta nada</strong>. Não há login, análises, publicidade nem serviços de terceiros. Suas informações nunca saem do seu aparelho, exceto pela sincronização do iCloud que você já usa no Lembretes (gerenciada pela Apple, não por nós).</p>
+    <details><summary>Meus dados financeiros são privados?</summary>
+    <p>Sim. O Remainders <strong>não coleta nada</strong>. Não há login, análises, publicidade nem serviços de terceiros. Suas informações nunca saem do seu aparelho, exceto pela sincronização do iCloud que você já usa no Lembretes (gerenciada pela Apple, não por nós).</p></details>
 
-    <h3>Por que o app precisa de acesso ao Lembretes?</h3>
-    <p>É assim que ele funciona — o Remainders lê e escreve suas contas/receitas/metas como tarefas em uma lista do Lembretes. Ele só mexe na lista que você escolher. Você pode revogar o acesso a qualquer momento em Ajustes → Privacidade e Segurança → Lembretes.</p>
+    <details><summary>Por que o app precisa de acesso ao Lembretes?</summary>
+    <p>É assim que ele funciona — o Remainders lê e escreve suas contas/receitas/metas como tarefas em uma lista do Lembretes. Ele só mexe na lista que você escolher. Você pode revogar o acesso a qualquer momento em Ajustes → Privacidade e Segurança → Lembretes.</p></details>
 
-    <h3>Concluí uma conta recorrente e a próxima pulou um mês. Por quê?</h3>
-    <p>Os itens recorrentes usam o agendamento do próprio Lembretes. Quando você conclui uma conta que se repete, o Lembretes avança para a <strong>próxima ocorrência no futuro</strong>. Se você concluir <em>depois</em> que a data de uma ocorrência já passou, essa ocorrência é pulada. Dica: conclua as contas em dia (o selo <strong>Em atraso</strong> ajuda a identificar as vencidas) para evitar pulos.</p>
+    <details><summary>Concluí uma conta recorrente e a próxima pulou um mês. Por quê?</summary>
+    <p>Os itens recorrentes usam o agendamento do próprio Lembretes. Quando você conclui uma conta que se repete, o Lembretes avança para a <strong>próxima ocorrência no futuro</strong>. Se você concluir <em>depois</em> que a data de uma ocorrência já passou, essa ocorrência é pulada. Dica: conclua as contas em dia (o selo <strong>Em atraso</strong> ajuda a identificar as vencidas) para evitar pulos.</p></details>
 
-    <h3>Se eu desmarcar uma conta recorrente concluída, por que ela não volta como recorrente?</h3>
-    <p>Quando você conclui uma conta recorrente, o Lembretes faz duas coisas ao mesmo tempo: marca aquela ocorrência como concluída (um item avulso) e agenda a <strong>próxima</strong> ocorrência da série. Então, se depois você desmarcar aquele item concluído, ele volta como uma <strong>tarefa única</strong> — não recorrente — porque a série recorrente já avançou para a próxima data. Você normalmente verá sua conta recorrente ativa <em>e</em> essa avulsa; se não precisar da avulsa, é só excluí-la. É assim que o Lembretes da Apple lida com recorrência, e o Remainders faz igual.</p>
+    <details><summary>Se eu desmarcar uma conta recorrente concluída, por que ela não volta como recorrente?</summary>
+    <p>Quando você conclui uma conta recorrente, o Lembretes faz duas coisas ao mesmo tempo: marca aquela ocorrência como concluída (um item avulso) e agenda a <strong>próxima</strong> ocorrência da série. Então, se depois você desmarcar aquele item concluído, ele volta como uma <strong>tarefa única</strong> — não recorrente — porque a série recorrente já avançou para a próxima data. Você normalmente verá sua conta recorrente ativa <em>e</em> essa avulsa; se não precisar da avulsa, é só excluí-la. É assim que o Lembretes da Apple lida com recorrência, e o Remainders faz igual.</p></details>
 
-    <h3>E se eu desmarcar uma receita concluída ou um depósito de meta?</h3>
-    <p>Uma receita volta para sua lista ativa como não recebida (com o mesmo comportamento de tarefa única acima, no caso das recorrentes). Para <strong>metas</strong>, concluir uma ocorrência registra um depósito — para desfazer, exclua esse depósito do histórico de depósitos da meta, o que o subtrai do total guardado.</p>
+    <details><summary>E se eu desmarcar uma receita concluída ou um depósito de meta?</summary>
+    <p>Uma receita volta para sua lista ativa como não recebida (com o mesmo comportamento de tarefa única acima, no caso das recorrentes). Para <strong>metas</strong>, concluir uma ocorrência registra um depósito — para desfazer, exclua esse depósito do histórico de depósitos da meta, o que o subtrai do total guardado.</p></details>
 
-    <h3>Meus valores mudaram de formato depois que troquei a região.</h3>
-    <p>A moeda, as datas e a formatação de números seguem a <strong>Região do seu aparelho</strong>. Quando você muda de região, o Remainders atualiza seus registros para o novo formato. Isso é esperado — seus valores não mudam, apenas a formatação.</p>
+    <details><summary>Meus valores mudaram de formato depois que troquei a região.</summary>
+    <p>A moeda, as datas e a formatação de números seguem a <strong>Região do seu aparelho</strong>. Quando você muda de região, o Remainders atualiza seus registros para o novo formato. Isso é esperado — seus valores não mudam, apenas a formatação.</p></details>
 
-    <h3>Posso editar minhas contas direto no app Lembretes?</h3>
-    <p>Sim — você pode marcar itens como concluídos, renomeá-los ou mudar datas no Lembretes, e o Remainders capta as mudanças (e vice-versa). A única coisa a evitar é editar à mão o <strong>valor no título da tarefa</strong> ou a linha <code>[Remainders]</code> nas notas — é ali que ficam o valor e os ajustes de cada registro.</p>
+    <details><summary>Posso editar minhas contas direto no app Lembretes?</summary>
+    <p>Sim — você pode marcar itens como concluídos, renomeá-los ou mudar datas no Lembretes, e o Remainders capta as mudanças (e vice-versa). A única coisa a evitar é editar à mão o <strong>valor no título da tarefa</strong> ou a linha <code>[Remainders]</code> nas notas — é ali que ficam o valor e os ajustes de cada registro.</p></details>
 
-    <h3>Por que algumas linhas ficam esmaecidas e não podem ser marcadas?</h3>
-    <p>São ocorrências futuras <strong>projetadas</strong> das suas contas/receitas recorrentes — prévias, ainda não são tarefas reais. Elas se tornam reais (e marcáveis) conforme a data chega.</p>
+    <details><summary>Por que algumas linhas ficam esmaecidas e não podem ser marcadas?</summary>
+    <p>São ocorrências futuras <strong>projetadas</strong> das suas contas/receitas recorrentes — prévias, ainda não são tarefas reais. Elas se tornam reais (e marcáveis) conforme a data chega.</p></details>
 
-    <h3>Como funcionam os ciclos de cobrança?</h3>
-    <p>Um ciclo de cobrança é a janela em que o Remainders agrupa tudo (mensal, semanal, a cada 2 semanas, a cada 15 dias ou um intervalo personalizado). Configure-o para coincidir com o seu pagamento. Ele determina quanto ainda falta pagar antes da próxima receita, o que está em atraso e quanto sobra depois das contas.</p>
+    <details><summary>Como funcionam os ciclos de cobrança?</summary>
+    <p>Um ciclo de cobrança é a janela em que o Remainders agrupa tudo (mensal, semanal, a cada 2 semanas, a cada 15 dias ou um intervalo personalizado). Configure-o para coincidir com o seu pagamento. Ele determina quanto ainda falta pagar antes da próxima receita, o que está em atraso e quanto sobra depois das contas.</p></details>
 
-    <h3>Quando as notificações chegam?</h3>
-    <p>As notificações são entregues pelo app <strong>Lembretes</strong>. Por padrão, você é avisado às 9:00 na data de vencimento; defina um horário personalizado por registro, se preferir.</p>
+    <details><summary>Quando as notificações chegam?</summary>
+    <p>As notificações são entregues pelo app <strong>Lembretes</strong>. Por padrão, você é avisado às 9:00 na data de vencimento; defina um horário personalizado por registro, se preferir.</p></details>
 
-    <h3>Funciona em todos os meus aparelhos?</h3>
-    <p>Sim — como seus dados ficam no Lembretes + iCloud, eles sincronizam automaticamente no seu iPhone, iPad e Mac. O widget mostra o ciclo atual num relance.</p>
+    <details><summary>Funciona em todos os meus aparelhos?</summary>
+    <p>Sim — como seus dados ficam no Lembretes + iCloud, eles sincronizam automaticamente no seu iPhone, iPad e Mac. O widget mostra o ciclo atual num relance.</p></details>
 
-    <h3>O widget parece desatualizado.</h3>
-    <p>Os widgets atualizam periodicamente. Abra o app uma vez para forçar a atualização, ou remova e adicione o widget de novo se ainda parecer desatualizado.</p>
+    <details><summary>O widget parece desatualizado.</summary>
+    <p>Os widgets atualizam periodicamente. Abra o app uma vez para forçar a atualização, ou remova e adicione o widget de novo se ainda parecer desatualizado.</p></details>
 
-    <h3>O Remainders depende do Lembretes da Apple?</h3>
-    <p>Sim. O Remainders é construído sobre o framework <strong>EventKit</strong> da Apple e o app <strong>Lembretes</strong>, que são fornecidos e mantidos pela Apple. Guardar seus dados, sincronizá-los entre aparelhos (via iCloud), agendar recorrências e entregar notificações são feitos pelo Lembretes/iCloud — não pelo Remainders. Se a Apple mudar como isso funciona, ou se o Lembretes ou o iCloud tiverem algum problema, isso pode afetar o app. Mantemos o Remainders atualizado para funcionar bem com as versões mais recentes do sistema.</p>
+    <details><summary>O Remainders depende do Lembretes da Apple?</summary>
+    <p>Sim. O Remainders é construído sobre o framework <strong>EventKit</strong> da Apple e o app <strong>Lembretes</strong>, que são fornecidos e mantidos pela Apple. Guardar seus dados, sincronizá-los entre aparelhos (via iCloud), agendar recorrências e entregar notificações são feitos pelo Lembretes/iCloud — não pelo Remainders. Se a Apple mudar como isso funciona, ou se o Lembretes ou o iCloud tiverem algum problema, isso pode afetar o app. Mantemos o Remainders atualizado para funcionar bem com as versões mais recentes do sistema.</p></details>
 
     <hr />
     <h2>Política de Privacidade</h2>
-    <p class="muted"><strong>Data de vigência:</strong> [date]</p>
-    <p>O Remainders ("o app") foi projetado para ser privado por padrão.</p>
-    <ul>
-      <li><strong>Sem coleta de dados.</strong> Não coletamos, transmitimos, vendemos nem compartilhamos nenhuma informação pessoal ou financeira. O app não tem contas nem servidores operados por nós.</li>
-      <li><strong>Onde seus dados ficam.</strong> Todo o conteúdo que você cria é guardado como tarefas no app Lembretes da Apple, no seu aparelho, e sincronizado pela sua conta pessoal do iCloud (regida pela <a href="https://www.apple.com/legal/privacy/">Política de Privacidade da Apple</a>). Nós não temos acesso a ele.</li>
-      <li><strong>Permissões.</strong> O app solicita acesso ao Lembretes apenas para ler e escrever as contas, receitas e metas que você insere. Você pode revogar isso a qualquer momento nos Ajustes do sistema.</li>
-      <li><strong>Sem rastreamento ou anúncios.</strong> O app não contém análises, publicidade nem SDKs de rastreamento de terceiros.</li>
-      <li><strong>Crianças.</strong> O app não coleta intencionalmente dados de ninguém, incluindo crianças.</li>
-    </ul>
-    <p>Se tiver dúvidas sobre privacidade, entre em contato: <a href="mailto:remainders.support@icloud.com">remainders.support@icloud.com</a>.</p>
+    <div class="card">
+      <p class="muted"><strong>Data de vigência:</strong> Setembro de 2026</p>
+      <p>O Remainders ("o app") foi projetado para ser privado por padrão.</p>
+      <ul>
+        <li><strong>Sem coleta de dados.</strong> Não coletamos, transmitimos, vendemos nem compartilhamos nenhuma informação pessoal ou financeira. O app não tem contas nem servidores operados por nós.</li>
+        <li><strong>Onde seus dados ficam.</strong> Todo o conteúdo que você cria é guardado como tarefas no app Lembretes da Apple, no seu aparelho, e sincronizado pela sua conta pessoal do iCloud (regida pela <a href="https://www.apple.com/legal/privacy/">Política de Privacidade da Apple</a>). Nós não temos acesso a ele.</li>
+        <li><strong>Permissões.</strong> O app solicita acesso ao Lembretes apenas para ler e escrever as contas, receitas e metas que você insere. Você pode revogar isso a qualquer momento nos Ajustes do sistema.</li>
+        <li><strong>Sem rastreamento ou anúncios.</strong> O app não contém análises, publicidade nem SDKs de rastreamento de terceiros.</li>
+        <li><strong>Crianças.</strong> O app não coleta intencionalmente dados de ninguém, incluindo crianças.</li>
+      </ul>
+      <p>Se tiver dúvidas sobre privacidade, entre em contato: <a href="mailto:remainders.support@icloud.com">remainders.support@icloud.com</a>.</p>
+    </div>
 
-    <hr />
     <h2>Aviso legal</h2>
-    <p>O Remainders depende do app <strong>Lembretes</strong>, do framework <strong>EventKit</strong> e do <strong>iCloud</strong> da Apple para guardar seus dados, sincronizá-los entre aparelhos, agendar itens recorrentes e entregar notificações. Esses serviços são fornecidos e controlados pela Apple. O Remainders não se responsabiliza por perda de dados, atrasos ou conflitos de sincronização, notificações não entregues ou duplicadas, ou outros problemas causados pelos serviços da Apple, pelo iCloud ou por mudanças no iOS, iPadOS ou macOS. Para qualquer coisa importante, mantenha seus próprios registros à parte.</p>
+    <div class="card">
+      <p>O Remainders depende do app <strong>Lembretes</strong>, do framework <strong>EventKit</strong> e do <strong>iCloud</strong> da Apple para guardar seus dados, sincronizá-los entre aparelhos, agendar itens recorrentes e entregar notificações. Esses serviços são fornecidos e controlados pela Apple. O Remainders não se responsabiliza por perda de dados, atrasos ou conflitos de sincronização, notificações não entregues ou duplicadas, ou outros problemas causados pelos serviços da Apple, pelo iCloud ou por mudanças no iOS, iPadOS ou macOS. Para qualquer coisa importante, mantenha seus próprios registros à parte.</p>
+    </div>
   </div>
 
   <!-- ================= ESPAÑOL (es) ================= -->
@@ -198,64 +250,67 @@
 
     <h2>Preguntas frecuentes</h2>
 
-    <h3>¿Cómo guarda Remainders mis datos?</h3>
-    <p>Todo lo que añades — cuentas, ingresos y metas — se guarda como tareas en una lista dedicada dentro de la app <strong>Recordatorios</strong> de Apple. Remainders no tiene cuenta, servidores ni base de datos propia. Tus datos viven en Recordatorios y se sincronizan entre tus dispositivos a través de <strong>tu propio iCloud</strong>, igual que tus demás recordatorios. Para eliminar todos tus datos de Remainders, borra su lista en Recordatorios.</p>
+    <details><summary>¿Cómo guarda Remainders mis datos?</summary>
+    <p>Todo lo que añades — cuentas, ingresos y metas — se guarda como tareas en una lista dedicada dentro de la app <strong>Recordatorios</strong> de Apple. Remainders no tiene cuenta, servidores ni base de datos propia. Tus datos viven en Recordatorios y se sincronizan entre tus dispositivos a través de <strong>tu propio iCloud</strong>, igual que tus demás recordatorios. Para eliminar todos tus datos de Remainders, borra su lista en Recordatorios.</p></details>
 
-    <h3>¿Mis datos financieros son privados?</h3>
-    <p>Sí. Remainders <strong>no recopila nada</strong>. No hay inicio de sesión, analíticas, publicidad ni servicios de terceros. Tu información nunca sale de tu dispositivo, salvo por la sincronización de iCloud que ya usas en Recordatorios (gestionada por Apple, no por nosotros).</p>
+    <details><summary>¿Mis datos financieros son privados?</summary>
+    <p>Sí. Remainders <strong>no recopila nada</strong>. No hay inicio de sesión, analíticas, publicidad ni servicios de terceros. Tu información nunca sale de tu dispositivo, salvo por la sincronización de iCloud que ya usas en Recordatorios (gestionada por Apple, no por nosotros).</p></details>
 
-    <h3>¿Por qué la app necesita acceso a Recordatorios?</h3>
-    <p>Así es como funciona: Remainders lee y escribe tus cuentas/ingresos/metas como tareas en una lista de Recordatorios. Solo toca la lista que elijas. Puedes revocar el acceso cuando quieras en Ajustes → Privacidad y seguridad → Recordatorios.</p>
+    <details><summary>¿Por qué la app necesita acceso a Recordatorios?</summary>
+    <p>Así es como funciona: Remainders lee y escribe tus cuentas/ingresos/metas como tareas en una lista de Recordatorios. Solo toca la lista que elijas. Puedes revocar el acceso cuando quieras en Ajustes → Privacidad y seguridad → Recordatorios.</p></details>
 
-    <h3>Completé una cuenta recurrente y la siguiente se saltó un mes. ¿Por qué?</h3>
-    <p>Los elementos recurrentes usan la programación de la propia app Recordatorios. Cuando completas una cuenta que se repite, Recordatorios avanza a la <strong>próxima ocurrencia en el futuro</strong>. Si la completas <em>después</em> de que la fecha de una ocurrencia ya pasó, esa ocurrencia se omite. Consejo: completa las cuentas a tiempo (la etiqueta <strong>Vencido</strong> ayuda a detectar las que tocan) para evitar saltos.</p>
+    <details><summary>Completé una cuenta recurrente y la siguiente se saltó un mes. ¿Por qué?</summary>
+    <p>Los elementos recurrentes usan la programación de la propia app Recordatorios. Cuando completas una cuenta que se repite, Recordatorios avanza a la <strong>próxima ocurrencia en el futuro</strong>. Si la completas <em>después</em> de que la fecha de una ocurrencia ya pasó, esa ocurrencia se omite. Consejo: completa las cuentas a tiempo (la etiqueta <strong>Vencido</strong> ayuda a detectar las que tocan) para evitar saltos.</p></details>
 
-    <h3>Si desmarco una cuenta recurrente completada, ¿por qué no vuelve como recurrente?</h3>
-    <p>Cuando completas una cuenta recurrente, Recordatorios hace dos cosas a la vez: marca esa ocurrencia como hecha (un elemento independiente) y programa la <strong>próxima</strong> ocurrencia de la serie. Así que si luego desmarcas ese elemento completado, vuelve como una <strong>tarea única</strong> — no recurrente — porque la serie recurrente ya avanzó a su siguiente fecha. Normalmente verás tu cuenta recurrente activa <em>y</em> esta suelta; si no necesitas la suelta, solo bórrala. Así es como la app Recordatorios de Apple maneja la recurrencia, y Remainders hace lo mismo.</p>
+    <details><summary>Si desmarco una cuenta recurrente completada, ¿por qué no vuelve como recurrente?</summary>
+    <p>Cuando completas una cuenta recurrente, Recordatorios hace dos cosas a la vez: marca esa ocurrencia como hecha (un elemento independiente) y programa la <strong>próxima</strong> ocurrencia de la serie. Así que si luego desmarcas ese elemento completado, vuelve como una <strong>tarea única</strong> — no recurrente — porque la serie recurrente ya avanzó a su siguiente fecha. Normalmente verás tu cuenta recurrente activa <em>y</em> esta suelta; si no necesitas la suelta, solo bórrala. Así es como la app Recordatorios de Apple maneja la recurrencia, y Remainders hace lo mismo.</p></details>
 
-    <h3>¿Qué pasa si desmarco un ingreso completado o un depósito de una meta?</h3>
-    <p>Un ingreso vuelve a tu lista activa como no recibido (con el mismo comportamiento de tarea única de arriba en el caso de los recurrentes). Para las <strong>metas</strong>, completar una ocurrencia registra un depósito — para deshacerlo, elimina ese depósito del historial de depósitos de la meta, lo que lo resta del total ahorrado.</p>
+    <details><summary>¿Qué pasa si desmarco un ingreso completado o un depósito de una meta?</summary>
+    <p>Un ingreso vuelve a tu lista activa como no recibido (con el mismo comportamiento de tarea única de arriba en el caso de los recurrentes). Para las <strong>metas</strong>, completar una ocurrencia registra un depósito — para deshacerlo, elimina ese depósito del historial de depósitos de la meta, lo que lo resta del total ahorrado.</p></details>
 
-    <h3>Mis importes cambiaron de formato tras cambiar la región.</h3>
-    <p>La moneda, las fechas y el formato de números siguen la <strong>Región de tu dispositivo</strong>. Cuando cambias de región, Remainders actualiza sus registros al nuevo formato. Es lo esperado — tus valores no cambian, solo el formato.</p>
+    <details><summary>Mis importes cambiaron de formato tras cambiar la región.</summary>
+    <p>La moneda, las fechas y el formato de números siguen la <strong>Región de tu dispositivo</strong>. Cuando cambias de región, Remainders actualiza sus registros al nuevo formato. Es lo esperado — tus valores no cambian, solo el formato.</p></details>
 
-    <h3>¿Puedo editar mis cuentas directamente en la app Recordatorios?</h3>
-    <p>Sí — puedes marcar elementos como completados, renombrarlos o cambiar fechas en Recordatorios, y Remainders capta los cambios (y viceversa). Lo único que debes evitar es editar a mano el <strong>importe en el título de la tarea</strong> o la línea <code>[Remainders]</code> en sus notas — ahí es donde se guardan el valor y los ajustes de cada registro.</p>
+    <details><summary>¿Puedo editar mis cuentas directamente en la app Recordatorios?</summary>
+    <p>Sí — puedes marcar elementos como completados, renombrarlos o cambiar fechas en Recordatorios, y Remainders capta los cambios (y viceversa). Lo único que debes evitar es editar a mano el <strong>importe en el título de la tarea</strong> o la línea <code>[Remainders]</code> en sus notas — ahí es donde se guardan el valor y los ajustes de cada registro.</p></details>
 
-    <h3>¿Por qué algunas filas están atenuadas y no se pueden marcar?</h3>
-    <p>Son ocurrencias futuras <strong>proyectadas</strong> de tus cuentas/ingresos recurrentes — vistas previas, aún no son tareas reales. Se vuelven reales (y marcables) a medida que llega su fecha.</p>
+    <details><summary>¿Por qué algunas filas están atenuadas y no se pueden marcar?</summary>
+    <p>Son ocurrencias futuras <strong>proyectadas</strong> de tus cuentas/ingresos recurrentes — vistas previas, aún no son tareas reales. Se vuelven reales (y marcables) a medida que llega su fecha.</p></details>
 
-    <h3>¿Cómo funcionan los ciclos de facturación?</h3>
-    <p>Un ciclo de facturación es la ventana en la que Remainders agrupa todo (mensual, semanal, cada 2 semanas, cada 15 días o un intervalo personalizado). Ajústalo para que coincida con tu día de pago. Determina cuánto queda por pagar antes de tu próximo ingreso, qué está vencido y cuánto queda después de tus pagos.</p>
+    <details><summary>¿Cómo funcionan los ciclos de facturación?</summary>
+    <p>Un ciclo de facturación es la ventana en la que Remainders agrupa todo (mensual, semanal, cada 2 semanas, cada 15 días o un intervalo personalizado). Ajústalo para que coincida con tu día de pago. Determina cuánto queda por pagar antes de tu próximo ingreso, qué está vencido y cuánto queda después de tus pagos.</p></details>
 
-    <h3>¿Cuándo llegan las notificaciones?</h3>
-    <p>Las notificaciones las entrega la app <strong>Recordatorios</strong>. Por defecto se te avisa a las 9:00 en la fecha de vencimiento; define una hora personalizada por registro si lo prefieres.</p>
+    <details><summary>¿Cuándo llegan las notificaciones?</summary>
+    <p>Las notificaciones las entrega la app <strong>Recordatorios</strong>. Por defecto se te avisa a las 9:00 en la fecha de vencimiento; define una hora personalizada por registro si lo prefieres.</p></details>
 
-    <h3>¿Funciona en todos mis dispositivos?</h3>
-    <p>Sí — como tus datos están en Recordatorios + iCloud, se sincronizan automáticamente en tu iPhone, iPad y Mac. El widget muestra el ciclo actual de un vistazo.</p>
+    <details><summary>¿Funciona en todos mis dispositivos?</summary>
+    <p>Sí — como tus datos están en Recordatorios + iCloud, se sincronizan automáticamente en tu iPhone, iPad y Mac. El widget muestra el ciclo actual de un vistazo.</p></details>
 
-    <h3>El widget parece desactualizado.</h3>
-    <p>Los widgets se actualizan periódicamente. Abre la app una vez para forzar la actualización, o quita y vuelve a añadir el widget si sigue desactualizado.</p>
+    <details><summary>El widget parece desactualizado.</summary>
+    <p>Los widgets se actualizan periódicamente. Abre la app una vez para forzar la actualización, o quita y vuelve a añadir el widget si sigue desactualizado.</p></details>
 
-    <h3>¿Remainders depende de la app Recordatorios de Apple?</h3>
-    <p>Sí. Remainders está construido sobre el framework <strong>EventKit</strong> de Apple y la app <strong>Recordatorios</strong>, que son proporcionados y mantenidos por Apple. Guardar tus datos, sincronizarlos entre dispositivos (vía iCloud), programar recurrencias y entregar notificaciones lo hace Recordatorios/iCloud — no Remainders. Si Apple cambia cómo funciona eso, o si Recordatorios o iCloud tienen algún problema, puede afectar a la app. Mantenemos Remainders actualizado para funcionar bien con las versiones más recientes del sistema.</p>
+    <details><summary>¿Remainders depende de la app Recordatorios de Apple?</summary>
+    <p>Sí. Remainders está construido sobre el framework <strong>EventKit</strong> de Apple y la app <strong>Recordatorios</strong>, que son proporcionados y mantenidos por Apple. Guardar tus datos, sincronizarlos entre dispositivos (vía iCloud), programar recurrencias y entregar notificaciones lo hace Recordatorios/iCloud — no Remainders. Si Apple cambia cómo funciona eso, o si Recordatorios o iCloud tienen algún problema, puede afectar a la app. Mantenemos Remainders actualizado para funcionar bien con las versiones más recientes del sistema.</p></details>
 
     <hr />
     <h2>Política de Privacidad</h2>
-    <p class="muted"><strong>Fecha de entrada en vigor:</strong> [date]</p>
-    <p>Remainders ("la app") está diseñado para ser privado por defecto.</p>
-    <ul>
-      <li><strong>Sin recopilación de datos.</strong> No recopilamos, transmitimos, vendemos ni compartimos ninguna información personal o financiera. La app no tiene cuentas ni servidores operados por nosotros.</li>
-      <li><strong>Dónde viven tus datos.</strong> Todo el contenido que creas se guarda como tareas en la app Recordatorios de Apple, en tu dispositivo, y se sincroniza mediante tu cuenta personal de iCloud (regida por la <a href="https://www.apple.com/legal/privacy/">Política de Privacidad de Apple</a>). No tenemos acceso a él.</li>
-      <li><strong>Permisos.</strong> La app solicita acceso a Recordatorios únicamente para leer y escribir las cuentas, ingresos y metas que introduces. Puedes revocarlo cuando quieras en los Ajustes del sistema.</li>
-      <li><strong>Sin seguimiento ni anuncios.</strong> La app no contiene analíticas, publicidad ni SDK de seguimiento de terceros.</li>
-      <li><strong>Menores.</strong> La app no recopila datos de nadie de forma intencional, incluidos los menores.</li>
-    </ul>
-    <p>Si tienes preguntas sobre privacidad, contáctanos: <a href="mailto:remainders.support@icloud.com">remainders.support@icloud.com</a>.</p>
+    <div class="card">
+      <p class="muted"><strong>Fecha de entrada en vigor:</strong> Septiembre de 2026</p>
+      <p>Remainders ("la app") está diseñado para ser privado por defecto.</p>
+      <ul>
+        <li><strong>Sin recopilación de datos.</strong> No recopilamos, transmitimos, vendemos ni compartimos ninguna información personal o financiera. La app no tiene cuentas ni servidores operados por nosotros.</li>
+        <li><strong>Dónde viven tus datos.</strong> Todo el contenido que creas se guarda como tareas en la app Recordatorios de Apple, en tu dispositivo, y se sincroniza mediante tu cuenta personal de iCloud (regida por la <a href="https://www.apple.com/legal/privacy/">Política de Privacidad de Apple</a>). No tenemos acceso a él.</li>
+        <li><strong>Permisos.</strong> La app solicita acceso a Recordatorios únicamente para leer y escribir las cuentas, ingresos y metas que introduces. Puedes revocarlo cuando quieras en los Ajustes del sistema.</li>
+        <li><strong>Sin seguimiento ni anuncios.</strong> La app no contiene analíticas, publicidad ni SDK de seguimiento de terceros.</li>
+        <li><strong>Menores.</strong> La app no recopila datos de nadie de forma intencional, incluidos los menores.</li>
+      </ul>
+      <p>Si tienes preguntas sobre privacidad, contáctanos: <a href="mailto:remainders.support@icloud.com">remainders.support@icloud.com</a>.</p>
+    </div>
 
-    <hr />
     <h2>Aviso legal</h2>
-    <p>Remainders depende de la app <strong>Recordatorios</strong>, del framework <strong>EventKit</strong> y de <strong>iCloud</strong> de Apple para guardar tus datos, sincronizarlos entre dispositivos, programar elementos recurrentes y entregar notificaciones. Estos servicios son proporcionados y controlados por Apple. Remainders no se responsabiliza de la pérdida de datos, retrasos o conflictos de sincronización, notificaciones no entregadas o duplicadas, u otros problemas causados por los servicios de Apple, iCloud o cambios en iOS, iPadOS o macOS. Para cualquier cosa importante, guarda tus propios registros aparte.</p>
+    <div class="card">
+      <p>Remainders depende de la app <strong>Recordatorios</strong>, del framework <strong>EventKit</strong> y de <strong>iCloud</strong> de Apple para guardar tus datos, sincronizarlos entre dispositivos, programar elementos recurrentes y entregar notificaciones. Estos servicios son proporcionados y controlados por Apple. Remainders no se responsabiliza de la pérdida de datos, retrasos o conflictos de sincronización, notificaciones no entregadas o duplicadas, u otros problemas causados por los servicios de Apple, iCloud o cambios en iOS, iPadOS o macOS. Para cualquier cosa importante, guarda tus propios registros aparte.</p>
+    </div>
   </div>
 
   <footer>© 2026 Remainders · Not affiliated with Apple Inc.</footer>
