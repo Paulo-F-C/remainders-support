@@ -156,10 +156,25 @@
     <p>Currency, dates, and number formatting follow your <strong>device Region</strong>. When you change region, Remainders updates its entries to match your new format. This is expected — your values are unchanged, only the formatting.</p></details>
 
     <details><summary>Can I edit my bills directly in the Reminders app?</summary>
-    <p>Yes — you can check items off, rename them, or change dates in Reminders, and Remainders will pick up the changes (and vice versa). The one thing to avoid is hand‑editing the <strong>amount in a task's title</strong> or the <code>[Remainders]</code> line in its notes — that's where each entry's value and settings are stored.</p></details>
+    <p>Yes — you can check items off, rename them, or change dates in Reminders, and Remainders will pick up the changes (and vice versa). The one thing to avoid is hand‑editing the <strong>amount in a task's title</strong>, an installment's number (like <strong>3/10</strong>), or the <code>[Remainders]</code> line in its notes — that's where each entry's value and settings are stored.</p></details>
 
     <details><summary>Why are some rows dimmed and can't be checked off?</summary>
     <p>Those are <strong>projected</strong> future occurrences of your recurring bills/incomes — previews, not real tasks yet. They become real (and checkable) as their date arrives.</p></details>
+
+    <details><summary>How do installment purchases work?</summary>
+    <p>Choose <strong>Installments</strong> under Recurrence and type each installment's value or the purchase <strong>Total</strong>. Every installment becomes its own entry on its own month (TV 3/10), so each cycle shows exactly what's due. Dates follow installment 1, so the others keep their place in the sequence and can't be moved one by one. Turn on <strong>Pay ahead</strong> to pay the next, the last, or all remaining installments today. Paid one by mistake? Mark it as unpaid and it goes back to its month. Deleting asks whether to remove every installment, only the unpaid ones (paid ones stay as history), or the entire plan.</p></details>
+
+    <details><summary>I add my credit card statement and also the purchases on it. Is that counted twice?</summary>
+    <p>Yes — Remainders can't tell that a purchase is inside a statement, so adding both counts the same money twice. Pick one way per card: add the <strong>statement</strong> as a single monthly bill, <em>or</em> add the individual <strong>purchases and installments</strong> with the card as their payment method — then <strong>Bills by Method</strong> shows each card's total for the cycle.</p></details>
+
+    <details><summary>Where can I see all my bills, incomes and goals at once?</summary>
+    <p>In <strong>All Entries</strong>. It lists everything in one place: <strong>History</strong> (paid, received, deposited), <strong>Active</strong> (still open), and <strong>Projected</strong> (future occurrences). Use Search, or the Filter — by type, recurrence, category, source, method, overdue, or a date range — to find anything.</p></details>
+
+    <details><summary>How do filters and search work?</summary>
+    <p>Tap or click <strong>Filter</strong> at the bottom of a list and pick options in each section (recurrence, category, method, status, date…). Several options in one section show any of them; options in different sections must all match. Switch the chips' toggle to <strong>Hide</strong> to leave your picks out instead — a quick what‑if, like your month without subscriptions. While you type in <strong>Search</strong>, matching filters are suggested (type “paid” or a card's name) and tapping one adds it as a chip. The charts follow your filters too. Tip: tap the overdue banner to see just what's late.</p></details>
+
+    <details><summary>What does Forecast count?</summary>
+    <p>Everything <strong>still to come</strong> from today until the end of the window you pick (3 months to 2 years): unpaid bills, goal deposits, and incomes — real or projected. <strong>Net</strong> = incoming − bills − goal deposits. The <strong>Net Balance</strong> chart starts at zero today and ends at that same Net. Tap a row to see each of its dates and amounts; Filter and Search narrow both the list and the chart.</p></details>
 
     <details><summary>How do billing cycles work?</summary>
     <p>A billing cycle is the window Remainders groups everything into (monthly, weekly, every 2 weeks, every 15 days, or a custom interval). Set it to match your payday. It drives what's still to pay before your next income, what's overdue, and what remains after your dues.</p></details>
@@ -177,6 +192,18 @@
     <p>Yes. Remainders is built on Apple's <strong>EventKit</strong> framework and the <strong>Reminders</strong> app, which are provided and maintained by Apple. Storing your data, syncing it across devices (via iCloud), scheduling recurrence, and delivering notifications are all handled by Reminders/iCloud — not by Remainders. If Apple changes how those work, or if Reminders or iCloud sync has a hiccup, it can affect the app. We keep Remainders updated to work smoothly with the latest system versions.</p></details>
 
     <h2>What's New</h2>
+
+    <!-- 1.2: push (= publish) only after 1.2 is live on the App Store. -->
+    <details><summary>Version 1.2</summary>
+    <ul>
+      <li>Installment purchases: each installment is its own entry on its own month (TV 3/10), with Pay ahead and safe delete options.</li>
+      <li>A new Filter in every list: recurrence, category, source, method, status, overdue and dates — show only your picks or hide them, with removable chips. Search suggests matching filters as you type.</li>
+      <li>“All Bills” is now <strong>Bills</strong>, and “Timeline” is now <strong>All Entries</strong> — everything in one place, with filters and a date range.</li>
+      <li>Rebuilt Forecast: counts what's still to come from today (up to 2 years), shows goal deposits separately, adds a Net Balance chart, and opens any row's dates.</li>
+      <li>Tidier lists: paid and received items fold away, tap the overdue banner to see what's late, swipe left to edit, and act on several items at once from the side panel.</li>
+      <li>Incomes and Goals work like Bills: a % received ring, folded Received section, confirmed deletes, and Delete Goal in the editor.</li>
+      <li>A Chart view in Bills (now on iPhone too), clearer donut cards in the iPhone Overview, smooth animations, and many refinements.</li>
+    </ul></details>
 
     <details><summary>Version 1.1 — October 2026</summary>
     <ul>
@@ -248,10 +275,25 @@
     <p>A moeda, as datas e a formatação de números seguem a <strong>Região do seu aparelho</strong>. Quando você muda de região, o Remainders atualiza seus registros para o novo formato. Isso é esperado — seus valores não mudam, apenas a formatação.</p></details>
 
     <details><summary>Posso editar minhas contas direto no app Lembretes?</summary>
-    <p>Sim — você pode marcar itens como concluídos, renomeá-los ou mudar datas no Lembretes, e o Remainders capta as mudanças (e vice-versa). A única coisa a evitar é editar à mão o <strong>valor no título da tarefa</strong> ou a linha <code>[Remainders]</code> nas notas — é ali que ficam o valor e os ajustes de cada registro.</p></details>
+    <p>Sim — você pode marcar itens como concluídos, renomeá-los ou mudar datas no Lembretes, e o Remainders capta as mudanças (e vice-versa). A única coisa a evitar é editar à mão o <strong>valor no título da tarefa</strong>, o número de uma parcela (como <strong>3/10</strong>) ou a linha <code>[Remainders]</code> nas notas — é ali que ficam o valor e os ajustes de cada registro.</p></details>
 
     <details><summary>Por que algumas linhas ficam esmaecidas e não podem ser marcadas?</summary>
     <p>São ocorrências futuras <strong>projetadas</strong> das suas contas/receitas recorrentes — prévias, ainda não são tarefas reais. Elas se tornam reais (e marcáveis) conforme a data chega.</p></details>
+
+    <details><summary>Como funcionam as compras parceladas?</summary>
+    <p>Escolha <strong>Parcelada</strong> em Recorrência e digite o valor de cada parcela ou o <strong>Total</strong> da compra. Cada parcela vira um lançamento no seu próprio mês (TV 3/10), então cada ciclo mostra exatamente o que vence nele. As datas seguem a parcela 1, então as demais mantêm seu lugar na sequência e não podem ser movidas uma a uma. Ative <strong>Antecipar</strong> para pagar hoje as próximas, as últimas ou todas as parcelas restantes. Pagou uma por engano? Marque como não paga e ela volta para o seu mês. Ao excluir, você escolhe apagar todas as parcelas, só as não pagas (as pagas ficam no histórico) ou o parcelamento inteiro.</p></details>
+
+    <details><summary>Lanço a fatura do cartão e também as compras dela. Isso conta em dobro?</summary>
+    <p>Sim — o Remainders não tem como saber que uma compra está dentro de uma fatura, então lançar as duas conta o mesmo dinheiro duas vezes. Escolha um jeito por cartão: lance a <strong>fatura</strong> como uma única conta mensal, <em>ou</em> lance as <strong>compras e parcelas</strong> com o cartão como forma de pagamento — aí <strong>Contas por método</strong> mostra o total de cada cartão no ciclo.</p></details>
+
+    <details><summary>Onde vejo todas as minhas contas, receitas e metas de uma vez?</summary>
+    <p>Em <strong>Todos os lançamentos</strong>. Ali fica tudo num só lugar: <strong>Histórico</strong> (pagos, recebidos, depositados), <strong>Ativos</strong> (em aberto) e <strong>Projetados</strong> (ocorrências futuras). Use a Busca ou o Filtro — por tipo, recorrência, categoria, fonte, forma de pagamento, atraso ou período — para encontrar qualquer coisa.</p></details>
+
+    <details><summary>Como funcionam os filtros e a busca?</summary>
+    <p>Toque ou clique em <strong>Filtrar</strong>, embaixo de uma lista, e escolha opções em cada seção (recorrência, categoria, forma de pagamento, status, data…). Várias opções na mesma seção mostram qualquer uma delas; opções de seções diferentes precisam valer todas. Mude o seletor das etiquetas para <strong>Ocultar</strong> para deixar suas escolhas de fora — uma simulação rápida, como o seu mês sem assinaturas. Enquanto você digita na <strong>Busca</strong>, filtros correspondentes são sugeridos (digite “pagas” ou o nome de um cartão) e tocar num deles o adiciona como etiqueta. Os gráficos também seguem seus filtros. Dica: toque no aviso de vencidas para ver só o que está atrasado.</p></details>
+
+    <details><summary>O que a Previsão soma?</summary>
+    <p>Tudo o que <strong>ainda vem</strong>, de hoje até o fim do período que você escolher (de 3 meses a 2 anos): contas não pagas, depósitos em metas e receitas — reais ou projetados. <strong>Saldo</strong> = entradas − contas − depósitos em metas. O gráfico <strong>Saldo projetado</strong> começa em zero hoje e termina nesse mesmo saldo. Toque numa linha para ver cada data e valor; o Filtro e a Busca reduzem tanto a lista quanto o gráfico.</p></details>
 
     <details><summary>Como funcionam os ciclos de cobrança?</summary>
     <p>Um ciclo de cobrança é a janela em que o Remainders agrupa tudo (mensal, semanal, a cada 2 semanas, a cada 15 dias ou um intervalo personalizado). Configure-o para coincidir com o seu pagamento. Ele determina quanto ainda falta pagar antes da próxima receita, o que está em atraso e quanto sobra depois das contas.</p></details>
@@ -269,6 +311,18 @@
     <p>Sim. O Remainders é construído sobre o framework <strong>EventKit</strong> da Apple e o app <strong>Lembretes</strong>, que são fornecidos e mantidos pela Apple. Guardar seus dados, sincronizá-los entre aparelhos (via iCloud), agendar recorrências e entregar notificações são feitos pelo Lembretes/iCloud — não pelo Remainders. Se a Apple mudar como isso funciona, ou se o Lembretes ou o iCloud tiverem algum problema, isso pode afetar o app. Mantemos o Remainders atualizado para funcionar bem com as versões mais recentes do sistema.</p></details>
 
     <h2>Novidades</h2>
+
+    <!-- 1.2: push (= publish) only after 1.2 is live on the App Store. -->
+    <details><summary>Versão 1.2</summary>
+    <ul>
+      <li>Compras parceladas: cada parcela é um lançamento no seu próprio mês (TV 3/10), com Antecipar e opções seguras de exclusão.</li>
+      <li>Novo Filtro em todas as listas: recorrência, categoria, fonte, forma de pagamento, status, atraso e datas — mostre só suas escolhas ou oculte-as, com etiquetas removíveis. A Busca sugere filtros enquanto você digita.</li>
+      <li>“Todas as contas” agora é <strong>Contas</strong>, e “Todos os registros” agora é <strong>Todos os lançamentos</strong> — tudo num só lugar, com filtros e período.</li>
+      <li>Previsão refeita: soma o que ainda vem a partir de hoje (até 2 anos), mostra os depósitos em metas à parte, ganha um gráfico de Saldo projetado e abre as datas de qualquer linha.</li>
+      <li>Listas mais organizadas: itens pagos e recebidos ficam recolhidos, toque no aviso de vencidas para ver o que está atrasado, deslize para a esquerda para editar e aja em vários itens de uma vez pelo painel lateral.</li>
+      <li>Receitas e Metas funcionam como Contas: anel de % recebido, seção Recebidas recolhida, exclusões confirmadas e Excluir meta no editor.</li>
+      <li>Visualização em gráfico em Contas (agora também no iPhone), cartões de gráficos mais claros na Visão geral do iPhone, animações suaves e muitos ajustes.</li>
+    </ul></details>
 
     <details><summary>Versão 1.1 — outubro de 2026</summary>
     <ul>
@@ -340,10 +394,25 @@
     <p>La moneda, las fechas y el formato de números siguen la <strong>Región de tu dispositivo</strong>. Cuando cambias de región, Remainders actualiza sus registros al nuevo formato. Es lo esperado — tus valores no cambian, solo el formato.</p></details>
 
     <details><summary>¿Puedo editar mis cuentas directamente en la app Recordatorios?</summary>
-    <p>Sí — puedes marcar elementos como completados, renombrarlos o cambiar fechas en Recordatorios, y Remainders capta los cambios (y viceversa). Lo único que debes evitar es editar a mano el <strong>importe en el título de la tarea</strong> o la línea <code>[Remainders]</code> en sus notas — ahí es donde se guardan el valor y los ajustes de cada registro.</p></details>
+    <p>Sí — puedes marcar elementos como completados, renombrarlos o cambiar fechas en Recordatorios, y Remainders capta los cambios (y viceversa). Lo único que debes evitar es editar a mano el <strong>importe en el título de la tarea</strong>, el número de una cuota (como <strong>3/10</strong>) o la línea <code>[Remainders]</code> en sus notas — ahí es donde se guardan el valor y los ajustes de cada registro.</p></details>
 
     <details><summary>¿Por qué algunas filas están atenuadas y no se pueden marcar?</summary>
     <p>Son ocurrencias futuras <strong>proyectadas</strong> de tus cuentas/ingresos recurrentes — vistas previas, aún no son tareas reales. Se vuelven reales (y marcables) a medida que llega su fecha.</p></details>
+
+    <details><summary>¿Cómo funcionan las compras en cuotas?</summary>
+    <p>Elige <strong>En cuotas</strong> en Recurrencia y escribe el valor de cada cuota o el <strong>Total</strong> de la compra. Cada cuota se convierte en un movimiento en su propio mes (TV 3/10), así que cada ciclo muestra exactamente lo que vence en él. Las fechas siguen a la cuota 1, así que las demás mantienen su lugar en la secuencia y no se pueden mover una por una. Activa <strong>Adelantar</strong> para pagar hoy las próximas, las últimas o todas las cuotas restantes. ¿Pagaste una por error? Márcala como no pagada y vuelve a su mes. Al eliminar, eliges borrar todas las cuotas, solo las no pagadas (las pagadas quedan en el historial) o el plan entero.</p></details>
+
+    <details><summary>Registro el resumen de la tarjeta y también sus compras. ¿Se cuenta dos veces?</summary>
+    <p>Sí — Remainders no puede saber que una compra está dentro de un resumen, así que registrar ambos cuenta el mismo dinero dos veces. Elige una forma por tarjeta: registra el <strong>resumen</strong> como una sola cuenta mensual, <em>o</em> registra las <strong>compras y cuotas</strong> con la tarjeta como método de pago — entonces <strong>Cuentas por método</strong> muestra el total de cada tarjeta en el ciclo.</p></details>
+
+    <details><summary>¿Dónde veo todas mis cuentas, ingresos y metas a la vez?</summary>
+    <p>En <strong>Todos los movimientos</strong>. Ahí está todo en un solo lugar: <strong>Historial</strong> (pagados, recibidos, depositados), <strong>Activos</strong> (pendientes) y <strong>Proyectados</strong> (ocurrencias futuras). Usa la Búsqueda o el Filtro — por tipo, recurrencia, categoría, fuente, método, vencidos o un período — para encontrar cualquier cosa.</p></details>
+
+    <details><summary>¿Cómo funcionan los filtros y la búsqueda?</summary>
+    <p>Toca o haz clic en <strong>Filtrar</strong>, abajo de una lista, y elige opciones en cada sección (recurrencia, categoría, método, estado, fecha…). Varias opciones en una sección muestran cualquiera de ellas; las de secciones distintas deben cumplirse todas. Cambia el selector de las etiquetas a <strong>Ocultar</strong> para dejar fuera lo elegido — una simulación rápida, como tu mes sin suscripciones. Mientras escribes en <strong>Buscar</strong>, se sugieren los filtros que coinciden (escribe “pagadas” o el nombre de una tarjeta) y al tocar uno se añade como etiqueta. Los gráficos también siguen tus filtros. Consejo: toca el aviso de vencidas para ver solo lo atrasado.</p></details>
+
+    <details><summary>¿Qué suma la Previsión?</summary>
+    <p>Todo lo que está <strong>por venir</strong> desde hoy hasta el final del período que elijas (de 3 meses a 2 años): cuentas sin pagar, depósitos en metas e ingresos — reales o proyectados. <strong>Saldo</strong> = entradas − cuentas − depósitos en metas. El gráfico <strong>Saldo proyectado</strong> empieza en cero hoy y termina en ese mismo saldo. Toca una fila para ver cada fecha e importe; el Filtro y la Búsqueda acotan tanto la lista como el gráfico.</p></details>
 
     <details><summary>¿Cómo funcionan los ciclos de facturación?</summary>
     <p>Un ciclo de facturación es la ventana en la que Remainders agrupa todo (mensual, semanal, cada 2 semanas, cada 15 días o un intervalo personalizado). Ajústalo para que coincida con tu día de pago. Determina cuánto queda por pagar antes de tu próximo ingreso, qué está vencido y cuánto queda después de tus pagos.</p></details>
@@ -361,6 +430,18 @@
     <p>Sí. Remainders está construido sobre el framework <strong>EventKit</strong> de Apple y la app <strong>Recordatorios</strong>, que son proporcionados y mantenidos por Apple. Guardar tus datos, sincronizarlos entre dispositivos (vía iCloud), programar recurrencias y entregar notificaciones lo hace Recordatorios/iCloud — no Remainders. Si Apple cambia cómo funciona eso, o si Recordatorios o iCloud tienen algún problema, puede afectar a la app. Mantenemos Remainders actualizado para funcionar bien con las versiones más recientes del sistema.</p></details>
 
     <h2>Novedades</h2>
+
+    <!-- 1.2: push (= publish) only after 1.2 is live on the App Store. -->
+    <details><summary>Versión 1.2</summary>
+    <ul>
+      <li>Compras en cuotas: cada cuota es un movimiento en su propio mes (TV 3/10), con Adelantar y opciones seguras para eliminar.</li>
+      <li>Un nuevo Filtro en todas las listas: recurrencia, categoría, fuente, método, estado, vencidos y fechas — muestra solo lo elegido u ocúltalo, con etiquetas que se pueden quitar. La Búsqueda sugiere filtros mientras escribes.</li>
+      <li>“Todas las cuentas” ahora es <strong>Cuentas</strong>, y “Todos los registros” ahora es <strong>Todos los movimientos</strong> — todo en un solo lugar, con filtros y período.</li>
+      <li>Previsión renovada: suma lo que está por venir desde hoy (hasta 2 años), muestra aparte los depósitos en metas, añade un gráfico de Saldo proyectado y abre las fechas de cualquier fila.</li>
+      <li>Listas más ordenadas: lo pagado y recibido se pliega, toca el aviso de vencidas para ver lo atrasado, desliza a la izquierda para editar y actúa sobre varios elementos a la vez desde el panel lateral.</li>
+      <li>Ingresos y Metas funcionan como Cuentas: anillo de % recibido, sección Recibidos plegada, eliminaciones confirmadas y Eliminar meta en el editor.</li>
+      <li>Vista de gráfico en Cuentas (ahora también en iPhone), tarjetas de gráficos más claras en el Resumen del iPhone, animaciones suaves y muchas mejoras.</li>
+    </ul></details>
 
     <details><summary>Versión 1.1 — octubre de 2026</summary>
     <ul>
