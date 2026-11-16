@@ -129,81 +129,90 @@
   <div class="lang" id="lang-en">
     <div class="card">
       <p>Need help or have a question? Email <a class="email" href="mailto:remainders.support@icloud.com">remainders.support@icloud.com</a> and we'll get back to you.</p>
-      <p class="muted">Remainders is a personal finance tracker built entirely on Apple Reminders. Below are answers to the most common questions.</p>
+      <p class="muted">Remainders is a bill tracker and budget planner: bills, incomes, savings goals, credit cards and installments — and what's left before payday. Your data lives in your own private iCloud. Below are answers to the most common questions.</p>
     </div>
 
     <h2>Frequently Asked Questions</h2>
 
     <details><summary>How does Remainders store my data?</summary>
-    <p>Everything you add — bills, incomes, and goals — is saved as tasks in a dedicated list inside Apple's <strong>Reminders</strong> app. Remainders has no account, no servers, and no separate database. Your data lives in Reminders and syncs across your devices through <strong>your own iCloud</strong>, exactly like your other reminders. To remove all your Remainders data, delete its Reminders list.</p></details>
+    <p>In Remainders' own space in <strong>your private iCloud</strong> (Apple's CloudKit), synced between your iPhone, iPad and Mac signed in to the same Apple Account. There's no account to create and no server of ours: only you can see your data — not even the developer. Without iCloud, everything stays on the device.</p></details>
 
     <details><summary>Is my financial data private?</summary>
-    <p>Yes. Remainders <strong>collects nothing</strong>. There's no login, no analytics, no advertising, and no third‑party services. Your information never leaves your device except through the iCloud sync you already use for Reminders (managed by Apple, not by us).</p></details>
+    <p>Yes. Remainders <strong>collects nothing</strong>: no login, no analytics, no advertising, no third‑party services. Your data only leaves the device through your own iCloud sync, managed by Apple.</p></details>
 
-    <details><summary>Why does the app need access to Reminders?</summary>
-    <p>That's how it works — Remainders reads and writes your bills/incomes/goals as tasks in a Reminders list. It only touches the list you choose. You can revoke access anytime in Settings → Privacy &amp; Security → Reminders.</p></details>
+    <details><summary>I used Remainders 1.x with a Reminders list. What happens to it?</summary>
+    <p>When you update, Remainders offers to move your list in — everything is checked month by month against Reminders. Reminders is only <strong>read</strong>; nothing there changes. You can also do it later in <strong>Settings → Legacy → Import from Reminders…</strong>. Once you're happy, delete the old list (from the same screen) so Reminders stops sending its own alerts. Update Remainders on all your devices: 1.x keeps using Reminders and won't see 2.0's data.</p></details>
 
-    <details><summary>I completed a recurring bill and the next one skipped a month. Why?</summary>
-    <p>Recurring items use Reminders' own scheduling. When you complete a repeating bill, Reminders advances it to the <strong>next occurrence in the future</strong>. If you complete it <em>after</em> an occurrence's date has already passed, that occurrence is skipped. Tip: complete bills on time (the <strong>Overdue</strong> badge helps you spot ones that are due) to avoid skips.</p></details>
-
-    <details><summary>If I un-check a completed recurring bill, why doesn't it come back as recurring?</summary>
-    <p>When you complete a recurring bill, Reminders does two things at once: it marks that occurrence as done (a standalone, completed item) and it schedules the <strong>next</strong> occurrence of the series. So if you later un-check that completed item, it comes back as a <strong>single, one-time task</strong> — not a recurring one — because the recurring series has already moved on to its next date. You'll typically see your active recurring bill <em>and</em> this one-off; if you don't need the one-off, just delete it. This is how Apple's Reminders handles recurrence, and Remainders mirrors it.</p></details>
-
-    <details><summary>What happens if I un-check a completed income or goal deposit?</summary>
-    <p>An income returns to your active list as not received (same one-off behavior as above for recurring ones). For <strong>goals</strong>, completing an occurrence records a deposit — to undo it, delete that deposit from the goal's deposit history, which subtracts it from the saved total.</p></details>
-
-    <details><summary>My amounts changed format after I switched region.</summary>
-    <p>Currency, dates, and number formatting follow your <strong>device Region</strong>. When you change region, Remainders updates its entries to match your new format. This is expected — your values are unchanged, only the formatting.</p></details>
-
-    <details><summary>Can I edit my bills directly in the Reminders app?</summary>
-    <p>We recommend you don't: add, edit and delete everything in Remainders, and in Reminders only <strong>check off</strong> a bill, income, goal deposit, installment or statement when it's paid (right from its notification, for example). Remainders picks that up on every device. Each entry's value, installment number (like <strong>3/10</strong>), card and settings live in its title and the <code>[Remainders]</code> line in its notes, so renaming, re‑dating or editing tasks in Reminders can break an entry, its installment plan or its statement. Tip: keep a Reminders list just for Remainders, so your personal reminders stay uncluttered. If something looks off, run <strong>Run Diagnosis</strong> in Settings.</p></details>
-
-    <details><summary>Why are some rows dimmed and can't be checked off?</summary>
-    <p>Those are <strong>projected</strong> future occurrences of your recurring bills/incomes — previews, not real tasks yet. They become real (and checkable) as their date arrives.</p></details>
-
-    <details><summary>How do installment purchases work?</summary>
-    <p>Choose <strong>Installments</strong> under Recurrence and type each installment's value or the purchase <strong>Total</strong>. Every installment becomes its own entry on its own month (TV 3/10), so each cycle shows exactly what's due. Change the date or the number of installments from any of them and the whole plan follows (paid ones stay where they were paid). Use <strong>Pay Ahead…</strong> to pay the next, the last, or all remaining installments today. Paid one by mistake? Mark it as unpaid and it goes back to its month. Deleting asks whether to remove every installment, only the unpaid ones (paid ones stay as history), or the entire plan.</p></details>
-
-    <details><summary>How do credit card statements work?</summary>
-    <p>Create a card with <strong>＋</strong> → <strong>New Card…</strong> (in Bills, on the iPhone Home screen, or in the Mac's File menu) and set its <strong>closing day</strong> and <strong>due day</strong>. Cards show a card icon in the sidebar; right-click one — or a statement — (on iPhone and iPad, long-press) to edit it, or <strong>Delete Card…</strong> to remove the card and everything paid with it. When you add a bill, pick the card in <strong>Card</strong>. A card is kept apart from regular payment methods, even one with the same name, and bills don't move between a card and a regular method. From then on, everything paid with that card goes in its <strong>statements</strong>: Bills shows one row per statement — open it to see the purchases, installments and subscriptions inside. A purchase gets a <strong>purchase date</strong> (one on the closing day goes in the next statement) and stays off your notifications; the statement is one Reminders task on its due date. Check each purchase or subscription as you pay it (handy if you pay the card ahead) and what's left shows as still to pay; or mark the whole statement as paid. When every line is paid, so is the statement; a purchase added later reopens it with just what's left. Installments go one per statement, and <strong>Pay Ahead…</strong> moves them into the open statement. Subscriptions keep their own charge day (and its reminder) and are paid like any other line. Filters and search narrow what's shown inside each statement, and charts still split spending by category.</p></details>
-
-    <details><summary>Where can I see all my bills, incomes and goals at once?</summary>
-    <p>In <strong>All Entries</strong>. It lists everything in one place: <strong>History</strong> (paid, received, deposited), <strong>This Cycle</strong> (still open, overdue included), and <strong>Upcoming</strong> (everything after this cycle, projections included). Use Search, or the Filter — by type, recurrence, category, source, method, overdue, or a date range — to find anything.</p></details>
-
-    <details><summary>How do filters and search work?</summary>
-    <p>Tap or click <strong>Filter</strong> at the bottom of a list and pick options in each section (recurrence, category, method, status, date…). Several options in one section show any of them; options in different sections must all match. Switch the chips' toggle to <strong>Hide</strong> to leave your picks out instead — a quick what‑if, like your month without subscriptions. While you type in <strong>Search</strong>, matching filters are suggested (type “paid” or a card's name) and tapping one adds it as a chip. The charts follow your filters too. Tip: tap the overdue banner to see just what's late.</p></details>
-
-    <details><summary>What does Forecast count?</summary>
-    <p>Everything <strong>still to come</strong> from today until the end of the window you pick (3 months to 2 years): unpaid bills, goal deposits, and incomes — real or projected. <strong>Net</strong> = incoming − bills − goal deposits. The <strong>Net Balance</strong> chart starts at zero today and ends at that same Net. Tap a row to see each of its dates and amounts; Filter and Search narrow both the list and the chart.</p></details>
+    <details><summary>Why would the app ask for access to Reminders?</summary>
+    <p>Only to read a 1.x list once and move it in — and only when you choose to. New users are never asked. You can revoke it anytime in Settings → Privacy &amp; Security → Reminders.</p></details>
 
     <details><summary>How do billing cycles work?</summary>
-    <p>A billing cycle is the window Remainders groups everything into (monthly, weekly, every 2 weeks, every 15 days, or a custom interval). Set it to match your payday. It drives what's still to pay before your next income, what's overdue, and what remains after your dues.</p></details>
+    <p>Set your cycle once: monthly on your payday, or every week, two weeks or any number of days. Every bill, income and goal deposit falls in the cycle of its date, and Home shows what remains after this cycle's dues. Each budget has its own cycle.</p></details>
+
+    <details><summary>A bill's amount changes every month (electricity, water). What do I do?</summary>
+    <p>Give it an estimate. When the real bill arrives, long‑press it (right‑click on a Mac) → <strong>Mark as Paid with Another Amount…</strong>. That month takes the real value; the next ones keep the estimate.</p></details>
+
+    <details><summary>Why are some rows dimmed? Can I pay, edit or skip a future date?</summary>
+    <p>Dimmed rows are later dates of repeating entries. You can pay one ahead, edit it (<strong>Only This Date</strong> or <strong>This and Future Dates</strong>), or skip just that date — up to four years ahead.</p></details>
+
+    <details><summary>How do credit cards work?</summary>
+    <p><strong>＋ → New Card…</strong>, set its closing and due day, then pick it in <strong>Method</strong> when you add a purchase. Purchases, installments and subscriptions go in one statement per month, with one notification on its due date. Pay line by line or the whole statement. Long‑press a statement (right‑click on a Mac) to delete it: its purchases go, subscriptions skip that month, installment plans stay.</p></details>
+
+    <details><summary>What about store payment plans and “Pay in 4”?</summary>
+    <p><strong>＋ → New Installment Plan</strong>: monthly or every two weeks, with the first one already paid if you paid it at the checkout. Use <strong>Pay Ahead…</strong> to pay future installments today: they count in the current cycle (on a card, in the open statement).</p></details>
+
+    <details><summary>How do savings goals work?</summary>
+    <p>Set a target and a regular deposit. Each deposit is a row in your cycle like a bill, so saving is part of the budget; check it off and the goal's progress grows. <strong>Add Extra</strong> records a one‑off deposit. The goal's balance is your starting balance plus every deposit made.</p></details>
+
+    <details><summary>Can I keep separate budgets?</summary>
+    <p>Yes. The budget menu at the top creates, renames and deletes budgets — for home, a trip or a business — each with its own cycle and currency. The widget and Siri follow the budget on show.</p></details>
+
+    <details><summary>Where can I see all my bills, incomes and goals at once?</summary>
+    <p>In <strong>All Entries</strong>: <strong>History</strong> (paid, received, deposited), <strong>This Cycle</strong> (still open, overdue included) and <strong>Upcoming</strong> (everything after this cycle). Use Search or the Filter to find anything, and ⋯ → <strong>Select Items</strong> to act on several at once.</p></details>
+
+    <details><summary>How do filters and search work?</summary>
+    <p>Tap or click <strong>Filter</strong> and pick options in each section (recurrence, category, method, status, date…). Several options in one section show any of them; options in different sections must all match. Switch to <strong>Hide</strong> to leave your picks out instead — a quick what‑if, like your month without subscriptions. While you type in <strong>Search</strong>, matching filters are suggested and tapping one adds it as a chip. The charts follow your filters too.</p></details>
+
+    <details><summary>What does Forecast count?</summary>
+    <p>Everything <strong>still to come</strong> from today until the end of the window you pick (3 months to 4 years): unpaid bills, goal deposits and incomes. The <strong>Net Balance</strong> chart starts from this cycle's balance so far and adds each cycle's incomes minus bills and deposits. Filter and Search narrow both the list and the chart.</p></details>
 
     <details><summary>When do notifications arrive?</summary>
-    <p>Notifications are delivered by the <strong>Reminders</strong> app. By default you're alerted at 9:00 AM on the due date; set a custom time per entry if you prefer.</p></details>
+    <p>At 9:00 AM on the due date, or at the time you set per entry, plus an optional earlier alert. Mark as Paid right from the notification. Check <strong>Settings → Status</strong> if they don't arrive.</p></details>
 
     <details><summary>Does it work on all my devices?</summary>
-    <p>Yes — because your data is in Reminders + iCloud, it syncs to your iPhone, iPad, and Mac automatically. The widget shows your current cycle at a glance.</p></details>
+    <p>Yes — iPhone, iPad and Mac, through your iCloud, with one purchase. <strong>Settings → Status</strong> shows whether iCloud sync is on; <strong>Check Again</strong> asks iCloud again.</p></details>
+
+    <details><summary>How do I back up my data?</summary>
+    <p><strong>Settings → Backup → Export Backup…</strong> saves every budget in one CSV file (keep it somewhere private, like Files or iCloud Drive). <strong>Import Backup…</strong> restores it; what's already there is skipped.</p></details>
+
+    <details><summary>What happens if I sign out of iCloud on a device?</summary>
+    <p>iOS and macOS remove the iCloud‑synced data from that device when you sign out (your budgets stay in iCloud and on your other devices, and come back when you sign in again). If you plan to sign out for good, export a backup first.</p></details>
+
+    <details><summary>My amounts changed format after I switched region.</summary>
+    <p>Dates and number formatting follow your <strong>device Region</strong>; the currency follows each budget (<strong>Settings → Budget → Currency</strong>). Your values are unchanged, only the formatting.</p></details>
 
     <details><summary>The widget looks out of date.</summary>
-    <p>Widgets refresh periodically. Open the app once to force a refresh, or remove and re‑add the widget if it still looks stale.</p></details>
+    <p>Open Remainders once — it refreshes the widget. Widgets also update on their own during the day.</p></details>
 
-    <details><summary>Does Remainders depend on Apple's Reminders?</summary>
-    <p>Yes. Remainders is built on Apple's <strong>EventKit</strong> framework and the <strong>Reminders</strong> app, which are provided and maintained by Apple. Storing your data, syncing it across devices (via iCloud), scheduling recurrence, and delivering notifications are all handled by Reminders/iCloud — not by Remainders. If Apple changes how those work, or if Reminders or iCloud sync has a hiccup, it can affect the app. We keep Remainders updated to work smoothly with the latest system versions.</p></details>
+    <details><summary>Can I lock the app with Face ID?</summary>
+    <p>Yes, with iOS: touch and hold the Remainders icon → <strong>Require Face ID</strong>.</p></details>
 
     <h2>What's New</h2>
 
-    <!-- 1.2: push (= publish) only after 1.2 is live on the App Store. -->
-    <details><summary>Version 1.2</summary>
+    <details><summary>Version 2.0 — November 2026</summary>
+    <p>A brand‑new Remainders: redesigned, much faster, and your data now syncs through your own private iCloud instead of Apple Reminders.</p>
     <ul>
-      <li>Installment purchases: each installment is its own entry on its own month (TV 3/10), with Pay ahead and safe delete options.</li>
-      <li>Credit card statements: set a card's closing and due day, and its purchases, installments and subscriptions go in one statement per month — one row and one reminder; pay it line by line or all at once.</li>
-      <li>A new Filter in every list: recurrence, category, source, method, status, overdue and dates — show only your picks or hide them, with removable chips. Search suggests matching filters as you type.</li>
-      <li>“All Bills” is now <strong>Bills</strong>, and “Timeline” is now <strong>All Entries</strong> — everything in one place, with filters and a date range.</li>
-      <li>Rebuilt Forecast: counts what's still to come from today (up to 2 years), shows goal deposits separately, adds a Net Balance chart, and opens any row's dates.</li>
-      <li>Tidier lists: paid and received items fold away, tap the overdue banner to see what's late, swipe left to edit, and act on several items at once from the side panel.</li>
-      <li>Incomes and Goals work like Bills: a % received ring, folded Received section, confirmed deletes, and Delete Goal in the editor.</li>
-      <li>A Chart view in Bills (now on iPhone too), clearer donut cards in the iPhone Overview, smooth animations, and many refinements.</li>
+      <li>iPhone, iPad and Mac, always in sync — no account needed.</li>
+      <li>New Home, Overview, Charts and Calendar tabs.</li>
+      <li>Calendar: every bill, income and goal deposit on its day.</li>
+      <li>Charts: where your money goes, and a Forecast up to four years ahead.</li>
+      <li>Credit cards: purchases, installments and subscriptions in one monthly statement.</li>
+      <li>Installment plans and store payment plans, with Pay Ahead.</li>
+      <li>Pay a variable bill at its real amount; the next ones keep your estimate.</li>
+      <li>Pay, edit or skip any future bill.</li>
+      <li>Separate budgets for home, a trip or a business, each in its own currency.</li>
+      <li>Filters, search, notes, and a backup you can save to Files.</li>
+      <li>Used Remainders before? Bring your Reminders list in with one tap.</li>
     </ul></details>
 
     <details><summary>Version 1.1 — October 2026</summary>
@@ -227,13 +236,13 @@
     <hr />
     <h2>Privacy Policy</h2>
     <div class="card">
-      <p class="muted"><strong>Effective date:</strong> September 2026</p>
-      <p>Remainders ("the app") is designed to be private by default.</p>
+      <p class="muted"><strong>Effective date:</strong> November 2026</p>
+      <p>Remainders ("the app") does not collect, store, or share any personal data.</p>
       <ul>
-        <li><strong>No data collection.</strong> We do not collect, transmit, sell, or share any personal or financial information. The app has no accounts and no servers operated by us.</li>
-        <li><strong>Where your data lives.</strong> All content you create is stored as tasks in Apple's Reminders app on your device and synced via your personal iCloud account (governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>). We have no access to it.</li>
-        <li><strong>Permissions.</strong> The app requests access to Reminders solely to read and write the bills, incomes, and goals you enter. You can revoke this anytime in system Settings.</li>
-        <li><strong>No tracking or ads.</strong> The app contains no analytics, no advertising, and no third‑party tracking SDKs.</li>
+        <li><strong>Where your data lives.</strong> Everything you create is stored on your device and in Remainders' own space in your personal iCloud account (Apple CloudKit, private database), governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. We have no access to it.</li>
+        <li><strong>No accounts, no tracking.</strong> No login, analytics, advertising, or third‑party services.</li>
+        <li><strong>Permissions.</strong> Notifications, to remind you of due dates. Reminders, only if you choose to move a list from Remainders 1.x — read once, never changed.</li>
+        <li><strong>Deleting your data.</strong> Erase a budget in Settings, or remove the app's data from iCloud (Apple Account → iCloud → Manage Storage → Remainders). Signing out of iCloud on a device removes the synced copy from that device.</li>
         <li><strong>Children.</strong> The app does not knowingly collect any data from anyone, including children.</li>
       </ul>
       <p>If you have any questions about privacy, contact <a href="mailto:remainders.support@icloud.com">remainders.support@icloud.com</a>.</p>
@@ -241,7 +250,7 @@
 
     <h2>Disclaimer</h2>
     <div class="card">
-      <p>Remainders relies on Apple's <strong>Reminders</strong> app, the <strong>EventKit</strong> framework, and <strong>iCloud</strong> to store your data, sync it across devices, schedule recurring items, and deliver notifications. These services are provided and controlled by Apple. Remainders is not responsible for data loss, sync delays or conflicts, missed or duplicated notifications, or other issues caused by Apple's services, iCloud, or changes to iOS, iPadOS, or macOS. For anything important, please keep your own separate records.</p>
+      <p>Remainders relies on Apple's <strong>iCloud</strong> (CloudKit) to sync your data across devices and on the system to deliver notifications. These services are provided and controlled by Apple. Remainders is not responsible for data loss, sync delays or conflicts, or missed notifications caused by Apple's services or changes to iOS, iPadOS, or macOS. For anything important, keep a backup (Settings → Backup) and your own records.</p>
     </div>
   </div>
 
@@ -249,97 +258,106 @@
   <div class="lang" id="lang-pt">
     <div class="card">
       <p>Precisa de ajuda ou tem uma dúvida? Envie um e-mail para <a class="email" href="mailto:remainders.support@icloud.com">remainders.support@icloud.com</a> e responderemos.</p>
-      <p class="muted">O Remainders é um app de finanças pessoais construído inteiramente sobre o app Lembretes da Apple. Abaixo estão as respostas para as perguntas mais comuns.</p>
+      <p class="muted">O Remainders é um app de controle de contas e orçamento: contas, receitas, metas de economia, cartões de crédito e parcelas — e quanto sobra antes do pagamento. Seus dados ficam no seu próprio iCloud privado. Abaixo estão as respostas para as perguntas mais comuns.</p>
     </div>
 
     <h2>Perguntas frequentes</h2>
 
     <details><summary>Como o Remainders guarda meus dados?</summary>
-    <p>Tudo o que você adiciona — contas, receitas e metas — é salvo como tarefas em uma lista dedicada dentro do app <strong>Lembretes</strong> da Apple. O Remainders não tem conta, servidores nem banco de dados próprio. Seus dados ficam no Lembretes e sincronizam entre seus aparelhos pelo <strong>seu próprio iCloud</strong>, igual aos seus outros lembretes. Para remover todos os seus dados do Remainders, exclua a lista dele no Lembretes.</p></details>
+    <p>Num espaço próprio do Remainders dentro do <strong>seu iCloud privado</strong> (o CloudKit da Apple), sincronizado entre seu iPhone, iPad e Mac conectados à mesma Conta Apple. Não há conta para criar nem servidor nosso: só você vê seus dados — nem o desenvolvedor vê. Sem iCloud, tudo fica no aparelho.</p></details>
 
     <details><summary>Meus dados financeiros são privados?</summary>
-    <p>Sim. O Remainders <strong>não coleta nada</strong>. Não há login, análises, publicidade nem serviços de terceiros. Suas informações nunca saem do seu aparelho, exceto pela sincronização do iCloud que você já usa no Lembretes (gerenciada pela Apple, não por nós).</p></details>
+    <p>Sim. O Remainders <strong>não coleta nada</strong>: sem login, sem análise de uso, sem publicidade, sem serviços de terceiros. Seus dados só saem do aparelho pela sincronização do seu próprio iCloud, administrada pela Apple.</p></details>
 
-    <details><summary>Por que o app precisa de acesso ao Lembretes?</summary>
-    <p>É assim que ele funciona — o Remainders lê e escreve suas contas/receitas/metas como tarefas em uma lista do Lembretes. Ele só mexe na lista que você escolher. Você pode revogar o acesso a qualquer momento em Ajustes → Privacidade e Segurança → Lembretes.</p></details>
+    <details><summary>Eu usava o Remainders 1.x com uma lista do Lembretes. O que acontece com ela?</summary>
+    <p>Ao atualizar, o Remainders oferece trazer sua lista — tudo é conferido mês a mês com o Lembretes. O Lembretes é apenas <strong>lido</strong>; nada lá muda. Você também pode fazer isso depois em <strong>Ajustes → Versões anteriores → Importar do app Lembretes…</strong>. Quando estiver satisfeito, exclua a lista antiga (na mesma tela) para o Lembretes parar de enviar os próprios avisos. Atualize o Remainders em todos os seus aparelhos: o 1.x continua usando o Lembretes e não vê os dados do 2.0.</p></details>
 
-    <details><summary>Concluí uma conta recorrente e a próxima pulou um mês. Por quê?</summary>
-    <p>Os itens recorrentes usam o agendamento do próprio Lembretes. Quando você conclui uma conta que se repete, o Lembretes avança para a <strong>próxima ocorrência no futuro</strong>. Se você concluir <em>depois</em> que a data de uma ocorrência já passou, essa ocorrência é pulada. Dica: conclua as contas em dia (o selo <strong>Em atraso</strong> ajuda a identificar as vencidas) para evitar pulos.</p></details>
-
-    <details><summary>Se eu desmarcar uma conta recorrente concluída, por que ela não volta como recorrente?</summary>
-    <p>Quando você conclui uma conta recorrente, o Lembretes faz duas coisas ao mesmo tempo: marca aquela ocorrência como concluída (um item avulso) e agenda a <strong>próxima</strong> ocorrência da série. Então, se depois você desmarcar aquele item concluído, ele volta como uma <strong>tarefa única</strong> — não recorrente — porque a série recorrente já avançou para a próxima data. Você normalmente verá sua conta recorrente ativa <em>e</em> essa avulsa; se não precisar da avulsa, é só excluí-la. É assim que o Lembretes da Apple lida com recorrência, e o Remainders faz igual.</p></details>
-
-    <details><summary>E se eu desmarcar uma receita concluída ou um depósito de meta?</summary>
-    <p>Uma receita volta para sua lista ativa como não recebida (com o mesmo comportamento de tarefa única acima, no caso das recorrentes). Para <strong>metas</strong>, concluir uma ocorrência registra um depósito — para desfazer, exclua esse depósito do histórico de depósitos da meta, o que o subtrai do total guardado.</p></details>
-
-    <details><summary>Meus valores mudaram de formato depois que troquei a região.</summary>
-    <p>A moeda, as datas e a formatação de números seguem a <strong>Região do seu aparelho</strong>. Quando você muda de região, o Remainders atualiza seus registros para o novo formato. Isso é esperado — seus valores não mudam, apenas a formatação.</p></details>
-
-    <details><summary>Posso editar minhas contas direto no app Lembretes?</summary>
-    <p>Recomendamos que não: crie, edite e apague tudo no Remainders, e no Lembretes apenas <strong>marque como concluída</strong> uma conta, receita, depósito de meta, parcela ou fatura quando for paga (direto da notificação, por exemplo). O Remainders capta isso em todos os aparelhos. O valor, o número da parcela (como <strong>3/10</strong>), o cartão e os ajustes de cada registro ficam no título e na linha <code>[Remainders]</code> das notas, então renomear, mudar a data ou editar tarefas no Lembretes pode quebrar um registro, seu parcelamento ou sua fatura. Dica: use uma lista do Lembretes só para o Remainders, para que seus lembretes pessoais não fiquem lotados. Se algo parecer errado, execute <strong>Executar diagnóstico</strong> nos Ajustes.</p></details>
-
-    <details><summary>Por que algumas linhas ficam esmaecidas e não podem ser marcadas?</summary>
-    <p>São ocorrências futuras <strong>projetadas</strong> das suas contas/receitas recorrentes — prévias, ainda não são tarefas reais. Elas se tornam reais (e marcáveis) conforme a data chega.</p></details>
-
-    <details><summary>Como funcionam as compras parceladas?</summary>
-    <p>Escolha <strong>Parcelada</strong> em Recorrência e digite o valor de cada parcela ou o <strong>Total</strong> da compra. Cada parcela vira um lançamento no seu próprio mês (TV 3/10), então cada ciclo mostra exatamente o que vence nele. Mude a data ou o número de parcelas em qualquer uma delas e o plano inteiro acompanha (as pagas ficam onde foram pagas). Use <strong>Antecipar…</strong> para pagar hoje as próximas, as últimas ou todas as parcelas restantes. Pagou uma por engano? Marque como não paga e ela volta para o seu mês. Ao excluir, você escolhe apagar todas as parcelas, só as não pagas (as pagas ficam no histórico) ou o parcelamento inteiro.</p></details>
-
-    <details><summary>Como funcionam as faturas do cartão de crédito?</summary>
-    <p>Crie um cartão com <strong>＋</strong> → <strong>Novo cartão…</strong> (em Contas, na tela Início do iPhone ou no menu Arquivo do Mac) e defina o <strong>dia do fechamento</strong> e o <strong>dia do vencimento</strong>. Os cartões aparecem com um ícone de cartão na barra lateral; clique com o botão direito num cartão — ou numa fatura — (no iPhone e iPad, toque e segure) para editar ou <strong>Apagar cartão…</strong>, que remove o cartão e tudo o que foi pago com ele. Ao lançar uma conta, escolha o cartão em <strong>Cartão</strong>. O cartão fica separado das formas de pagamento comuns, mesmo de uma com o mesmo nome, e contas não mudam entre um cartão e uma forma de pagamento comum. A partir daí, tudo o que for pago com esse cartão entra nas <strong>faturas</strong>: Contas mostra uma linha por fatura — abra para ver as compras, parcelas e assinaturas dentro dela. Cada compra tem uma <strong>data da compra</strong> (no dia do fechamento, entra na próxima fatura) e não gera notificações; a fatura é uma tarefa do Lembretes no vencimento. Marque cada compra ou assinatura conforme paga (útil para quem antecipa o pagamento do cartão) e o que falta aparece como a pagar; ou marque a fatura inteira como paga. Com todos os itens pagos, a fatura fica paga; uma compra lançada depois a reabre só com o que falta. As parcelas entram uma por fatura, e <strong>Antecipar…</strong> leva parcelas para a fatura aberta. Assinaturas mantêm o dia da cobrança (e o lembrete dele) e são pagas como qualquer outro item. Filtros e busca restringem o que aparece dentro de cada fatura, e os gráficos continuam separando os gastos por categoria.</p></details>
-
-    <details><summary>Onde vejo todas as minhas contas, receitas e metas de uma vez?</summary>
-    <p>Em <strong>Todos os lançamentos</strong>. Ali fica tudo num só lugar: <strong>Histórico</strong> (pagos, recebidos, depositados), <strong>Este ciclo</strong> (em aberto, incluindo os vencidos) e <strong>Próximos</strong> (tudo depois deste ciclo, projeções incluídas). Use a Busca ou o Filtro — por tipo, recorrência, categoria, fonte, forma de pagamento, atraso ou período — para encontrar qualquer coisa.</p></details>
-
-    <details><summary>Como funcionam os filtros e a busca?</summary>
-    <p>Toque ou clique em <strong>Filtrar</strong>, embaixo de uma lista, e escolha opções em cada seção (recorrência, categoria, forma de pagamento, status, data…). Várias opções na mesma seção mostram qualquer uma delas; opções de seções diferentes precisam valer todas. Mude o seletor das etiquetas para <strong>Ocultar</strong> para deixar suas escolhas de fora — uma simulação rápida, como o seu mês sem assinaturas. Enquanto você digita na <strong>Busca</strong>, filtros correspondentes são sugeridos (digite “pagas” ou o nome de um cartão) e tocar num deles o adiciona como etiqueta. Os gráficos também seguem seus filtros. Dica: toque no aviso de vencidas para ver só o que está atrasado.</p></details>
-
-    <details><summary>O que a Previsão soma?</summary>
-    <p>Tudo o que <strong>ainda vem</strong>, de hoje até o fim do período que você escolher (de 3 meses a 2 anos): contas não pagas, depósitos em metas e receitas — reais ou projetados. <strong>Saldo</strong> = entradas − contas − depósitos em metas. O gráfico <strong>Saldo projetado</strong> começa em zero hoje e termina nesse mesmo saldo. Toque numa linha para ver cada data e valor; o Filtro e a Busca reduzem tanto a lista quanto o gráfico.</p></details>
+    <details><summary>Por que o app pediria acesso ao Lembretes?</summary>
+    <p>Só para ler uma lista do 1.x uma vez e trazê-la — e só quando você escolher. Usuários novos nunca são perguntados. Você pode revogar o acesso quando quiser em Ajustes → Privacidade e Segurança → Lembretes.</p></details>
 
     <details><summary>Como funcionam os ciclos de cobrança?</summary>
-    <p>Um ciclo de cobrança é a janela em que o Remainders agrupa tudo (mensal, semanal, a cada 2 semanas, a cada 15 dias ou um intervalo personalizado). Configure-o para coincidir com o seu pagamento. Ele determina quanto ainda falta pagar antes da próxima receita, o que está em atraso e quanto sobra depois das contas.</p></details>
+    <p>Defina seu ciclo uma vez: mensal no dia do pagamento, ou semanal, quinzenal ou a cada quantos dias quiser. Cada conta, receita e depósito de meta cai no ciclo da sua data, e o Início mostra quanto sobra depois das contas do ciclo. Cada orçamento tem seu próprio ciclo.</p></details>
+
+    <details><summary>O valor de uma conta muda todo mês (luz, água). O que eu faço?</summary>
+    <p>Dê a ela uma estimativa. Quando a conta real chegar, toque e segure nela (clique com o botão direito no Mac) → <strong>Marcar como paga com outro valor…</strong>. Aquele mês fica com o valor real; os próximos mantêm a estimativa.</p></details>
+
+    <details><summary>Por que algumas linhas ficam esmaecidas? Posso pagar, editar ou pular uma data futura?</summary>
+    <p>As linhas esmaecidas são as próximas datas de lançamentos que se repetem. Você pode antecipar uma, editá-la (<strong>Só esta data</strong> ou <strong>Esta e as próximas datas</strong>) ou pular só aquela data — até quatro anos à frente.</p></details>
+
+    <details><summary>Como funcionam os cartões de crédito?</summary>
+    <p><strong>＋ → Novo cartão…</strong>, defina o dia de fechamento e de vencimento, e escolha-o em <strong>Método</strong> ao lançar uma compra. Compras, parcelas e assinaturas entram numa fatura por mês, com uma notificação no vencimento. Pague item por item ou a fatura inteira. Toque e segure uma fatura (botão direito no Mac) para excluí-la: as compras saem, as assinaturas pulam aquele mês e os parcelamentos continuam.</p></details>
+
+    <details><summary>E os carnês e o “pague em 4”?</summary>
+    <p><strong>＋ → Novo carnê</strong>: mensal ou a cada duas semanas, com a primeira parcela já paga se você pagou no caixa. Use <strong>Antecipar…</strong> para pagar parcelas futuras hoje: elas contam no ciclo atual (no cartão, na fatura aberta).</p></details>
+
+    <details><summary>Como funcionam as metas de economia?</summary>
+    <p>Defina um objetivo e um depósito regular. Cada depósito é uma linha do seu ciclo, como uma conta, então guardar dinheiro faz parte do orçamento; marque-o e o progresso da meta cresce. <strong>Adicionar extra</strong> registra um depósito avulso. O saldo da meta é o saldo inicial mais cada depósito feito.</p></details>
+
+    <details><summary>Posso ter orçamentos separados?</summary>
+    <p>Sim. O menu de orçamentos no topo cria, renomeia e exclui orçamentos — para a casa, uma viagem ou um negócio — cada um com seu ciclo e sua moeda. O widget e a Siri seguem o orçamento em exibição.</p></details>
+
+    <details><summary>Onde vejo todas as minhas contas, receitas e metas de uma vez?</summary>
+    <p>Em <strong>Todos os lançamentos</strong>: <strong>Histórico</strong> (pago, recebido, depositado), <strong>Este ciclo</strong> (ainda em aberto, atrasados incluídos) e <strong>Próximos</strong> (tudo depois deste ciclo). Use a busca ou o Filtro para achar qualquer coisa, e ⋯ → <strong>Selecionar itens</strong> para agir em vários de uma vez.</p></details>
+
+    <details><summary>Como funcionam os filtros e a busca?</summary>
+    <p>Toque ou clique em <strong>Filtro</strong> e escolha opções em cada seção (recorrência, categoria, método, status, data…). Várias opções numa mesma seção mostram qualquer uma delas; opções de seções diferentes precisam valer juntas. Mude para <strong>Ocultar</strong> para deixar suas escolhas de fora — um “e se” rápido, como seu mês sem assinaturas. Enquanto você digita na <strong>busca</strong>, filtros correspondentes são sugeridos e tocar num deles o adiciona como etiqueta. Os gráficos seguem seus filtros também.</p></details>
+
+    <details><summary>O que a Previsão soma?</summary>
+    <p>Tudo o que <strong>ainda vem</strong> de hoje até o fim da janela escolhida (3 meses a 4 anos): contas não pagas, depósitos de metas e receitas. O gráfico de <strong>Saldo projetado</strong> parte do saldo deste ciclo até agora e soma, ciclo a ciclo, receitas menos contas e depósitos. O Filtro e a busca restringem a lista e o gráfico.</p></details>
 
     <details><summary>Quando as notificações chegam?</summary>
-    <p>As notificações são entregues pelo app <strong>Lembretes</strong>. Por padrão, você é avisado às 9:00 na data de vencimento; defina um horário personalizado por registro, se preferir.</p></details>
+    <p>Às 9:00 na data de vencimento, ou no horário que você definir em cada lançamento, mais um aviso antecipado opcional. Marque como paga direto na notificação. Confira <strong>Ajustes → Status</strong> se elas não chegarem.</p></details>
 
     <details><summary>Funciona em todos os meus aparelhos?</summary>
-    <p>Sim — como seus dados ficam no Lembretes + iCloud, eles sincronizam automaticamente no seu iPhone, iPad e Mac. O widget mostra o ciclo atual num relance.</p></details>
+    <p>Sim — iPhone, iPad e Mac, pelo seu iCloud, com uma única compra. <strong>Ajustes → Status</strong> mostra se a sincronização com o iCloud está ativa; <strong>Verificar de novo</strong> consulta o iCloud outra vez.</p></details>
+
+    <details><summary>Como faço backup dos meus dados?</summary>
+    <p><strong>Ajustes → Backup → Exportar backup…</strong> salva todos os orçamentos num único arquivo CSV (guarde-o num lugar privado, como o app Arquivos ou o iCloud Drive). <strong>Importar backup…</strong> restaura o arquivo; o que já existe é pulado.</p></details>
+
+    <details><summary>O que acontece se eu sair do iCloud num aparelho?</summary>
+    <p>O iOS e o macOS removem desse aparelho os dados sincronizados pelo iCloud quando você sai da conta (seus orçamentos continuam no iCloud e nos outros aparelhos, e voltam quando você entra de novo). Se pretende sair de vez, exporte um backup antes.</p></details>
+
+    <details><summary>Meus valores mudaram de formato depois que troquei a região.</summary>
+    <p>Datas e formato de números seguem a <strong>Região</strong> do aparelho; a moeda segue cada orçamento (<strong>Ajustes → Orçamento → Moeda</strong>). Seus valores não mudam, só a formatação.</p></details>
 
     <details><summary>O widget parece desatualizado.</summary>
-    <p>Os widgets atualizam periodicamente. Abra o app uma vez para forçar a atualização, ou remova e adicione o widget de novo se ainda parecer desatualizado.</p></details>
+    <p>Abra o Remainders uma vez — ele atualiza o widget. Os widgets também se atualizam sozinhos ao longo do dia.</p></details>
 
-    <details><summary>O Remainders depende do Lembretes da Apple?</summary>
-    <p>Sim. O Remainders é construído sobre o framework <strong>EventKit</strong> da Apple e o app <strong>Lembretes</strong>, que são fornecidos e mantidos pela Apple. Guardar seus dados, sincronizá-los entre aparelhos (via iCloud), agendar recorrências e entregar notificações são feitos pelo Lembretes/iCloud — não pelo Remainders. Se a Apple mudar como isso funciona, ou se o Lembretes ou o iCloud tiverem algum problema, isso pode afetar o app. Mantemos o Remainders atualizado para funcionar bem com as versões mais recentes do sistema.</p></details>
+    <details><summary>Posso bloquear o app com o Face ID?</summary>
+    <p>Sim, pelo iOS: toque e segure o ícone do Remainders → <strong>Exigir Face ID</strong>.</p></details>
 
     <h2>Novidades</h2>
 
-    <!-- 1.2: push (= publish) only after 1.2 is live on the App Store. -->
-    <details><summary>Versão 1.2</summary>
+    <details><summary>Versão 2.0 — novembro de 2026</summary>
+    <p>Um Remainders todo novo: redesenhado, muito mais rápido, e seus dados agora sincronizam pelo seu próprio iCloud privado em vez do app Lembretes.</p>
     <ul>
-      <li>Compras parceladas: cada parcela é um lançamento no seu próprio mês (TV 3/10), com Antecipar e opções seguras de exclusão.</li>
-      <li>Faturas do cartão de crédito: defina o fechamento e o vencimento do cartão, e as compras, parcelas e assinaturas entram em uma fatura por mês — uma linha e um lembrete; pague item por item ou tudo de uma vez.</li>
-      <li>Novo Filtro em todas as listas: recorrência, categoria, fonte, forma de pagamento, status, atraso e datas — mostre só suas escolhas ou oculte-as, com etiquetas removíveis. A Busca sugere filtros enquanto você digita.</li>
-      <li>“Todas as contas” agora é <strong>Contas</strong>, e “Todos os registros” agora é <strong>Todos os lançamentos</strong> — tudo num só lugar, com filtros e período.</li>
-      <li>Previsão refeita: soma o que ainda vem a partir de hoje (até 2 anos), mostra os depósitos em metas à parte, ganha um gráfico de Saldo projetado e abre as datas de qualquer linha.</li>
-      <li>Listas mais organizadas: itens pagos e recebidos ficam recolhidos, toque no aviso de vencidas para ver o que está atrasado, deslize para a esquerda para editar e aja em vários itens de uma vez pelo painel lateral.</li>
-      <li>Receitas e Metas funcionam como Contas: anel de % recebido, seção Recebidas recolhida, exclusões confirmadas e Excluir meta no editor.</li>
-      <li>Visualização em gráfico em Contas (agora também no iPhone), cartões de gráficos mais claros na Visão geral do iPhone, animações suaves e muitos ajustes.</li>
+      <li>iPhone, iPad e Mac, sempre sincronizados — sem cadastro.</li>
+      <li>Novas abas: Início, Visão geral, Gráficos e Calendário.</li>
+      <li>Calendário: cada conta, receita e depósito de meta no seu dia.</li>
+      <li>Gráficos: para onde vai seu dinheiro, e uma Previsão até quatro anos à frente.</li>
+      <li>Cartão de crédito: compras, parcelas e assinaturas numa única fatura mensal.</li>
+      <li>Parcelamentos e carnês, com Antecipar.</li>
+      <li>Pague uma conta variável pelo valor real; as próximas mantêm sua estimativa.</li>
+      <li>Pague, edite ou pule qualquer conta futura.</li>
+      <li>Orçamentos separados para a casa, uma viagem ou um negócio, cada um na sua moeda.</li>
+      <li>Filtros, busca, notas, e um backup que você salva no app Arquivos.</li>
+      <li>Já usava o Remainders? Traga sua lista do Lembretes com um toque.</li>
     </ul></details>
 
     <details><summary>Versão 1.1 — outubro de 2026</summary>
     <ul>
-      <li>Otimizado para o iPhone Duo: aberto, veja sua lista e o editor lado a lado; fechado, tudo cabe na tela externa — e você continua na mesma tela ao abrir ou fechar.</li>
-      <li>Edite contas, receitas e metas em um painel lateral no Mac, no iPad, no iPhone Duo e nos iPhones Pro Max e Plus na horizontal — selecione uma para ver o status, marcá-la como paga e editá-la ali mesmo, e feche com um toque ou clique.</li>
+      <li>Otimizado para o iPhone Duo: aberto, veja sua lista e o editor lado a lado; fechado, tudo cabe na tela externa — e você continua na mesma tela ao dobrar ou desdobrar.</li>
+      <li>Edite contas, receitas e metas num painel lateral no Mac, iPad, iPhone Duo e nos iPhones Pro Max e Plus na horizontal — selecione um item para ver o status, marcar como pago e editar ali mesmo, e feche com um toque ou clique.</li>
       <li>Novo gráfico “Para onde vai sua receita” na Visão geral, mostrando o que sobra depois das contas.</li>
-      <li>Previsão mais precisa: os depósitos de uma meta param quando ela é alcançada.</li>
-      <li>Suas listas do Remainders agora aparecem primeiro na escolha de lista.</li>
+      <li>Previsão mais precisa: os depósitos param quando a meta é atingida.</li>
+      <li>Suas listas do Remainders aparecem primeiro ao escolher uma lista.</li>
       <li>O Diagnóstico ajuda a verificar as notificações do Lembretes.</li>
       <li>A Siri e os Atalhos agora entendem português e espanhol.</li>
-      <li>Clique duas vezes para editar no Mac, novo visual em Liquid Glass, além de vários ajustes e correções.</li>
+      <li>Clique duplo para editar no Mac, visual Liquid Glass renovado, e muitos refinamentos e correções.</li>
     </ul></details>
 
     <details><summary>Versão 1.0.1 — outubro de 2026</summary>
-    <p>Corrigimos os totais exibidos ao lado de cada categoria e forma de pagamento, que podiam incluir contas de outros ciclos. Agora eles correspondem ao ciclo atual.</p></details>
+    <p>Corrigidos os totais ao lado de cada categoria e forma de pagamento, que podiam incluir contas de outros ciclos. Agora correspondem ao ciclo atual.</p></details>
 
     <details><summary>Versão 1.0 — 13 de outubro de 2026</summary>
     <p>Primeira versão do Remainders para iPhone, iPad e Mac.</p></details>
@@ -347,119 +365,128 @@
     <hr />
     <h2>Política de Privacidade</h2>
     <div class="card">
-      <p class="muted"><strong>Data de vigência:</strong> Setembro de 2026</p>
-      <p>O Remainders ("o app") foi projetado para ser privado por padrão.</p>
+      <p class="muted"><strong>Data de vigência:</strong> novembro de 2026</p>
+      <p>O Remainders (“o app”) não coleta, armazena nem compartilha nenhum dado pessoal.</p>
       <ul>
-        <li><strong>Sem coleta de dados.</strong> Não coletamos, transmitimos, vendemos nem compartilhamos nenhuma informação pessoal ou financeira. O app não tem contas nem servidores operados por nós.</li>
-        <li><strong>Onde seus dados ficam.</strong> Todo o conteúdo que você cria é guardado como tarefas no app Lembretes da Apple, no seu aparelho, e sincronizado pela sua conta pessoal do iCloud (regida pela <a href="https://www.apple.com/legal/privacy/">Política de Privacidade da Apple</a>). Nós não temos acesso a ele.</li>
-        <li><strong>Permissões.</strong> O app solicita acesso ao Lembretes apenas para ler e escrever as contas, receitas e metas que você insere. Você pode revogar isso a qualquer momento nos Ajustes do sistema.</li>
-        <li><strong>Sem rastreamento ou anúncios.</strong> O app não contém análises, publicidade nem SDKs de rastreamento de terceiros.</li>
+        <li><strong>Onde seus dados ficam.</strong> Tudo o que você cria é guardado no seu aparelho e no espaço próprio do Remainders na sua conta pessoal do iCloud (Apple CloudKit, banco de dados privado), sob a <a href="https://www.apple.com/legal/privacy/br/">Política de Privacidade da Apple</a>. Não temos acesso a ele.</li>
+        <li><strong>Sem contas, sem rastreamento.</strong> Sem login, análise de uso, publicidade ou serviços de terceiros.</li>
+        <li><strong>Permissões.</strong> Notificações, para lembrar você dos vencimentos. Lembretes, somente se você optar por trazer uma lista do Remainders 1.x — lida uma vez, nunca alterada.</li>
+        <li><strong>Apagar seus dados.</strong> Apague um orçamento nos Ajustes, ou remova os dados do app do iCloud (Conta Apple → iCloud → Gerenciar armazenamento → Remainders). Sair do iCloud num aparelho remove a cópia sincronizada desse aparelho.</li>
         <li><strong>Crianças.</strong> O app não coleta intencionalmente dados de ninguém, incluindo crianças.</li>
       </ul>
-      <p>Se tiver dúvidas sobre privacidade, entre em contato: <a href="mailto:remainders.support@icloud.com">remainders.support@icloud.com</a>.</p>
+      <p>Se tiver qualquer dúvida sobre privacidade, escreva para <a href="mailto:remainders.support@icloud.com">remainders.support@icloud.com</a>.</p>
     </div>
 
     <h2>Aviso legal</h2>
     <div class="card">
-      <p>O Remainders depende do app <strong>Lembretes</strong>, do framework <strong>EventKit</strong> e do <strong>iCloud</strong> da Apple para guardar seus dados, sincronizá-los entre aparelhos, agendar itens recorrentes e entregar notificações. Esses serviços são fornecidos e controlados pela Apple. O Remainders não se responsabiliza por perda de dados, atrasos ou conflitos de sincronização, notificações não entregues ou duplicadas, ou outros problemas causados pelos serviços da Apple, pelo iCloud ou por mudanças no iOS, iPadOS ou macOS. Para qualquer coisa importante, mantenha seus próprios registros à parte.</p>
+      <p>O Remainders depende do <strong>iCloud</strong> da Apple (CloudKit) para sincronizar seus dados entre aparelhos e do sistema para entregar notificações. Esses serviços são fornecidos e controlados pela Apple. O Remainders não se responsabiliza por perda de dados, atrasos ou conflitos de sincronização, ou notificações não entregues causados pelos serviços da Apple ou por mudanças no iOS, iPadOS ou macOS. Para qualquer coisa importante, mantenha um backup (Ajustes → Backup) e seus próprios registros.</p>
     </div>
   </div>
 
-  <!-- ================= ESPAÑOL (es) ================= -->
+  <!-- ================= ESPAÑOL ================= -->
   <div class="lang" id="lang-es">
     <div class="card">
       <p>¿Necesitas ayuda o tienes una pregunta? Escribe a <a class="email" href="mailto:remainders.support@icloud.com">remainders.support@icloud.com</a> y te responderemos.</p>
-      <p class="muted">Remainders es un gestor de finanzas personales creado por completo sobre la app Recordatorios de Apple. A continuación tienes las respuestas a las preguntas más frecuentes.</p>
+      <p class="muted">Remainders es una app para controlar cuentas y presupuesto: cuentas, ingresos, metas de ahorro, tarjetas de crédito y cuotas — y cuánto te queda antes del pago. Tus datos viven en tu propio iCloud privado. Abajo encontrarás respuestas a las preguntas más comunes.</p>
     </div>
 
     <h2>Preguntas frecuentes</h2>
 
     <details><summary>¿Cómo guarda Remainders mis datos?</summary>
-    <p>Todo lo que añades — cuentas, ingresos y metas — se guarda como tareas en una lista dedicada dentro de la app <strong>Recordatorios</strong> de Apple. Remainders no tiene cuenta, servidores ni base de datos propia. Tus datos viven en Recordatorios y se sincronizan entre tus dispositivos a través de <strong>tu propio iCloud</strong>, igual que tus demás recordatorios. Para eliminar todos tus datos de Remainders, borra su lista en Recordatorios.</p></details>
+    <p>En un espacio propio de Remainders dentro de <strong>tu iCloud privado</strong> (CloudKit de Apple), sincronizado entre tu iPhone, iPad y Mac con la misma Cuenta de Apple. No hay cuenta que crear ni servidor nuestro: solo tú ves tus datos — ni siquiera el desarrollador. Sin iCloud, todo se queda en el dispositivo.</p></details>
 
     <details><summary>¿Mis datos financieros son privados?</summary>
-    <p>Sí. Remainders <strong>no recopila nada</strong>. No hay inicio de sesión, analíticas, publicidad ni servicios de terceros. Tu información nunca sale de tu dispositivo, salvo por la sincronización de iCloud que ya usas en Recordatorios (gestionada por Apple, no por nosotros).</p></details>
+    <p>Sí. Remainders <strong>no recopila nada</strong>: sin inicio de sesión, sin analíticas, sin publicidad, sin servicios de terceros. Tus datos solo salen del dispositivo a través de la sincronización de tu propio iCloud, gestionada por Apple.</p></details>
 
-    <details><summary>¿Por qué la app necesita acceso a Recordatorios?</summary>
-    <p>Así es como funciona: Remainders lee y escribe tus cuentas/ingresos/metas como tareas en una lista de Recordatorios. Solo toca la lista que elijas. Puedes revocar el acceso cuando quieras en Ajustes → Privacidad y seguridad → Recordatorios.</p></details>
+    <details><summary>Usaba Remainders 1.x con una lista de Recordatorios. ¿Qué pasa con ella?</summary>
+    <p>Al actualizar, Remainders ofrece traer tu lista — todo se comprueba mes a mes con Recordatorios. Recordatorios solo se <strong>lee</strong>; nada cambia allí. También puedes hacerlo después en <strong>Ajustes → Versiones anteriores → Importar de Recordatorios…</strong>. Cuando estés conforme, elimina la lista antigua (desde la misma pantalla) para que Recordatorios deje de enviar sus propios avisos. Actualiza Remainders en todos tus dispositivos: 1.x sigue usando Recordatorios y no ve los datos de 2.0.</p></details>
 
-    <details><summary>Completé una cuenta recurrente y la siguiente se saltó un mes. ¿Por qué?</summary>
-    <p>Los elementos recurrentes usan la programación de la propia app Recordatorios. Cuando completas una cuenta que se repite, Recordatorios avanza a la <strong>próxima ocurrencia en el futuro</strong>. Si la completas <em>después</em> de que la fecha de una ocurrencia ya pasó, esa ocurrencia se omite. Consejo: completa las cuentas a tiempo (la etiqueta <strong>Vencido</strong> ayuda a detectar las que tocan) para evitar saltos.</p></details>
-
-    <details><summary>Si desmarco una cuenta recurrente completada, ¿por qué no vuelve como recurrente?</summary>
-    <p>Cuando completas una cuenta recurrente, Recordatorios hace dos cosas a la vez: marca esa ocurrencia como hecha (un elemento independiente) y programa la <strong>próxima</strong> ocurrencia de la serie. Así que si luego desmarcas ese elemento completado, vuelve como una <strong>tarea única</strong> — no recurrente — porque la serie recurrente ya avanzó a su siguiente fecha. Normalmente verás tu cuenta recurrente activa <em>y</em> esta suelta; si no necesitas la suelta, solo bórrala. Así es como la app Recordatorios de Apple maneja la recurrencia, y Remainders hace lo mismo.</p></details>
-
-    <details><summary>¿Qué pasa si desmarco un ingreso completado o un depósito de una meta?</summary>
-    <p>Un ingreso vuelve a tu lista activa como no recibido (con el mismo comportamiento de tarea única de arriba en el caso de los recurrentes). Para las <strong>metas</strong>, completar una ocurrencia registra un depósito — para deshacerlo, elimina ese depósito del historial de depósitos de la meta, lo que lo resta del total ahorrado.</p></details>
-
-    <details><summary>Mis importes cambiaron de formato tras cambiar la región.</summary>
-    <p>La moneda, las fechas y el formato de números siguen la <strong>Región de tu dispositivo</strong>. Cuando cambias de región, Remainders actualiza sus registros al nuevo formato. Es lo esperado — tus valores no cambian, solo el formato.</p></details>
-
-    <details><summary>¿Puedo editar mis cuentas directamente en la app Recordatorios?</summary>
-    <p>Te recomendamos que no: crea, edita y elimina todo en Remainders, y en Recordatorios solo <strong>marca como completada</strong> una cuenta, ingreso, depósito de meta, cuota o estado de cuenta cuando esté pagado (desde su aviso, por ejemplo). Remainders lo capta en todos tus dispositivos. El valor, el número de cuota (como <strong>3/10</strong>), la tarjeta y los ajustes de cada registro están en su título y en la línea <code>[Remainders]</code> de sus notas, así que renombrar, cambiar la fecha o editar tareas en Recordatorios puede romper un registro, su plan de cuotas o su estado de cuenta. Consejo: usa una lista de Recordatorios solo para Remainders, así tus recordatorios personales no se llenan. Si algo parece mal, ejecuta <strong>Ejecutar diagnóstico</strong> en Ajustes.</p></details>
-
-    <details><summary>¿Por qué algunas filas están atenuadas y no se pueden marcar?</summary>
-    <p>Son ocurrencias futuras <strong>proyectadas</strong> de tus cuentas/ingresos recurrentes — vistas previas, aún no son tareas reales. Se vuelven reales (y marcables) a medida que llega su fecha.</p></details>
-
-    <details><summary>¿Cómo funcionan las compras en cuotas?</summary>
-    <p>Elige <strong>En cuotas</strong> en Recurrencia y escribe el valor de cada cuota o el <strong>Total</strong> de la compra. Cada cuota se convierte en un movimiento en su propio mes (TV 3/10), así que cada ciclo muestra exactamente lo que vence en él. Cambia la fecha o el número de cuotas desde cualquiera de ellas y todo el plan se ajusta (las pagadas se quedan donde se pagaron). Usa <strong>Adelantar…</strong> para pagar hoy las próximas, las últimas o todas las cuotas restantes. ¿Pagaste una por error? Márcala como no pagada y vuelve a su mes. Al eliminar, eliges borrar todas las cuotas, solo las no pagadas (las pagadas quedan en el historial) o el plan entero.</p></details>
-
-    <details><summary>¿Cómo funcionan los estados de cuenta de la tarjeta de crédito?</summary>
-    <p>Crea una tarjeta con <strong>＋</strong> → <strong>Nueva tarjeta…</strong> (en Cuentas, en la pantalla Inicio del iPhone o en el menú Archivo del Mac) y define el <strong>día de cierre</strong> y el <strong>día de vencimiento</strong>. Las tarjetas muestran un ícono de tarjeta en la barra lateral; haz clic derecho en una tarjeta —o en un estado de cuenta— (en iPhone y iPad, mantén pulsado) para editarla o <strong>Eliminar tarjeta…</strong>, que borra la tarjeta y todo lo pagado con ella. Al añadir una factura, elige la tarjeta en <strong>Tarjeta</strong>. La tarjeta queda separada de los métodos de pago comunes, incluso de uno con el mismo nombre, y las facturas no pasan entre una tarjeta y un método común. Desde entonces, todo lo que pagues con esa tarjeta entra en sus <strong>estados de cuenta</strong>: Cuentas muestra una fila por estado de cuenta — ábrela para ver las compras, cuotas y suscripciones que contiene. Cada compra tiene una <strong>fecha de compra</strong> (si es el día de cierre, entra en el siguiente) y no genera avisos; el estado de cuenta es una tarea de Recordatorios en su vencimiento. Marca cada compra o suscripción a medida que la pagas (útil si adelantas el pago de la tarjeta) y lo que falta aparece como por pagar; o marca todo el estado de cuenta como pagado. Con todas las líneas pagadas, el estado de cuenta queda pagado; una compra añadida después lo reabre solo con lo que falta. Las cuotas van una por estado de cuenta, y <strong>Adelantar…</strong> las lleva al estado de cuenta abierto. Las suscripciones conservan su día de cargo (y su recordatorio) y se pagan como cualquier otra línea. Los filtros y la búsqueda acotan lo que se ve dentro de cada uno, y los gráficos siguen separando el gasto por categoría.</p></details>
-
-    <details><summary>¿Dónde veo todas mis cuentas, ingresos y metas a la vez?</summary>
-    <p>En <strong>Todos los movimientos</strong>. Ahí está todo en un solo lugar: <strong>Historial</strong> (pagados, recibidos, depositados), <strong>Este ciclo</strong> (pendientes, incluidos los vencidos) y <strong>Próximos</strong> (todo después de este ciclo, proyecciones incluidas). Usa la Búsqueda o el Filtro — por tipo, recurrencia, categoría, fuente, método, vencidos o un período — para encontrar cualquier cosa.</p></details>
-
-    <details><summary>¿Cómo funcionan los filtros y la búsqueda?</summary>
-    <p>Toca o haz clic en <strong>Filtrar</strong>, abajo de una lista, y elige opciones en cada sección (recurrencia, categoría, método, estado, fecha…). Varias opciones en una sección muestran cualquiera de ellas; las de secciones distintas deben cumplirse todas. Cambia el selector de las etiquetas a <strong>Ocultar</strong> para dejar fuera lo elegido — una simulación rápida, como tu mes sin suscripciones. Mientras escribes en <strong>Buscar</strong>, se sugieren los filtros que coinciden (escribe “pagadas” o el nombre de una tarjeta) y al tocar uno se añade como etiqueta. Los gráficos también siguen tus filtros. Consejo: toca el aviso de vencidas para ver solo lo atrasado.</p></details>
-
-    <details><summary>¿Qué suma la Previsión?</summary>
-    <p>Todo lo que está <strong>por venir</strong> desde hoy hasta el final del período que elijas (de 3 meses a 2 años): cuentas sin pagar, depósitos en metas e ingresos — reales o proyectados. <strong>Saldo</strong> = entradas − cuentas − depósitos en metas. El gráfico <strong>Saldo proyectado</strong> empieza en cero hoy y termina en ese mismo saldo. Toca una fila para ver cada fecha e importe; el Filtro y la Búsqueda acotan tanto la lista como el gráfico.</p></details>
+    <details><summary>¿Por qué la app pediría acceso a Recordatorios?</summary>
+    <p>Solo para leer una lista de 1.x una vez y traerla — y solo cuando tú lo elijas. A los usuarios nuevos nunca se les pide. Puedes revocarlo cuando quieras en Ajustes → Privacidad y seguridad → Recordatorios.</p></details>
 
     <details><summary>¿Cómo funcionan los ciclos de facturación?</summary>
-    <p>Un ciclo de facturación es la ventana en la que Remainders agrupa todo (mensual, semanal, cada 2 semanas, cada 15 días o un intervalo personalizado). Ajústalo para que coincida con tu día de pago. Determina cuánto queda por pagar antes de tu próximo ingreso, qué está vencido y cuánto queda después de tus pagos.</p></details>
+    <p>Define tu ciclo una vez: mensual en tu día de pago, o semanal, quincenal o cada los días que quieras. Cada cuenta, ingreso y depósito de meta cae en el ciclo de su fecha, e Inicio muestra lo que queda después de las cuentas del ciclo. Cada presupuesto tiene su propio ciclo.</p></details>
+
+    <details><summary>El importe de una cuenta cambia cada mes (luz, agua). ¿Qué hago?</summary>
+    <p>Dale una estimación. Cuando llegue la cuenta real, mantén pulsada la cuenta (clic derecho en el Mac) → <strong>Marcar como pagada con otro importe…</strong>. Ese mes toma el valor real; los siguientes mantienen la estimación.</p></details>
+
+    <details><summary>¿Por qué algunas filas están atenuadas? ¿Puedo pagar, editar u omitir una fecha futura?</summary>
+    <p>Las filas atenuadas son las próximas fechas de los movimientos que se repiten. Puedes adelantar una, editarla (<strong>Solo esta fecha</strong> o <strong>Esta y las fechas siguientes</strong>) u omitir solo esa fecha — hasta cuatro años por delante.</p></details>
+
+    <details><summary>¿Cómo funcionan las tarjetas de crédito?</summary>
+    <p><strong>＋ → Nueva tarjeta…</strong>, define su día de cierre y de vencimiento, y elígela en <strong>Método de pago</strong> al añadir una compra. Compras, cuotas y suscripciones van a un estado de cuenta por mes, con una notificación en su vencimiento. Paga línea por línea o el estado de cuenta completo. Mantén pulsado un estado de cuenta (clic derecho en el Mac) para eliminarlo: sus compras desaparecen, las suscripciones omiten ese mes y los planes de cuotas se quedan.</p></details>
+
+    <details><summary>¿Y los planes de pago de tiendas y el “paga en 4”?</summary>
+    <p><strong>＋ → Nuevo plan de cuotas</strong>: mensual o cada dos semanas, con la primera ya pagada si la pagaste en caja. Usa <strong>Adelantar…</strong> para pagar cuotas futuras hoy: cuentan en el ciclo actual (en una tarjeta, en el estado de cuenta abierto).</p></details>
+
+    <details><summary>¿Cómo funcionan las metas de ahorro?</summary>
+    <p>Define un objetivo y un depósito regular. Cada depósito es una fila de tu ciclo, como una cuenta, así que ahorrar forma parte del presupuesto; márcalo y el progreso de la meta crece. <strong>Añadir extra</strong> registra un depósito suelto. El saldo de la meta es el saldo inicial más cada depósito hecho.</p></details>
+
+    <details><summary>¿Puedo tener presupuestos separados?</summary>
+    <p>Sí. El menú de presupuestos de arriba crea, renombra y elimina presupuestos — para el hogar, un viaje o un negocio — cada uno con su ciclo y su moneda. El widget y Siri siguen el presupuesto en pantalla.</p></details>
+
+    <details><summary>¿Dónde veo todas mis cuentas, ingresos y metas a la vez?</summary>
+    <p>En <strong>Todos los movimientos</strong>: <strong>Historial</strong> (pagado, recibido, depositado), <strong>Este ciclo</strong> (aún abierto, vencidos incluidos) y <strong>Próximos</strong> (todo lo posterior a este ciclo). Usa la búsqueda o el Filtro para encontrar cualquier cosa, y ⋯ → <strong>Seleccionar elementos</strong> para actuar sobre varios a la vez.</p></details>
+
+    <details><summary>¿Cómo funcionan los filtros y la búsqueda?</summary>
+    <p>Toca o haz clic en <strong>Filtro</strong> y elige opciones en cada sección (recurrencia, categoría, método, estado, fecha…). Varias opciones de una misma sección muestran cualquiera de ellas; las opciones de secciones distintas deben cumplirse todas. Cambia a <strong>Ocultar</strong> para dejar fuera tus elecciones — un “¿y si…?” rápido, como tu mes sin suscripciones. Mientras escribes en la <strong>búsqueda</strong>, se sugieren filtros coincidentes y al tocar uno se añade como etiqueta. Los gráficos también siguen tus filtros.</p></details>
+
+    <details><summary>¿Qué suma la Previsión?</summary>
+    <p>Todo lo que <strong>está por venir</strong> desde hoy hasta el final de la ventana que elijas (de 3 meses a 4 años): cuentas sin pagar, depósitos de metas e ingresos. El gráfico de <strong>Saldo proyectado</strong> parte del saldo de este ciclo hasta ahora y suma, ciclo a ciclo, los ingresos menos las cuentas y los depósitos. El Filtro y la búsqueda acotan la lista y el gráfico.</p></details>
 
     <details><summary>¿Cuándo llegan las notificaciones?</summary>
-    <p>Las notificaciones las entrega la app <strong>Recordatorios</strong>. Por defecto se te avisa a las 9:00 en la fecha de vencimiento; define una hora personalizada por registro si lo prefieres.</p></details>
+    <p>A las 9:00 del día de vencimiento, o a la hora que definas en cada movimiento, más un aviso anticipado opcional. Márcala como pagada desde la propia notificación. Revisa <strong>Ajustes → Estado</strong> si no llegan.</p></details>
 
     <details><summary>¿Funciona en todos mis dispositivos?</summary>
-    <p>Sí — como tus datos están en Recordatorios + iCloud, se sincronizan automáticamente en tu iPhone, iPad y Mac. El widget muestra el ciclo actual de un vistazo.</p></details>
+    <p>Sí — iPhone, iPad y Mac, a través de tu iCloud, con una sola compra. <strong>Ajustes → Estado</strong> muestra si la sincronización con iCloud está activa; <strong>Comprobar de nuevo</strong> vuelve a consultar iCloud.</p></details>
+
+    <details><summary>¿Cómo hago una copia de seguridad de mis datos?</summary>
+    <p><strong>Ajustes → Copia de seguridad → Exportar copia…</strong> guarda todos los presupuestos en un único archivo CSV (consérvalo en un lugar privado, como Archivos o iCloud Drive). <strong>Importar copia…</strong> lo restaura; lo que ya existe se omite.</p></details>
+
+    <details><summary>¿Qué pasa si cierro sesión de iCloud en un dispositivo?</summary>
+    <p>iOS y macOS quitan de ese dispositivo los datos sincronizados con iCloud al cerrar sesión (tus presupuestos siguen en iCloud y en tus otros dispositivos, y vuelven al iniciar sesión de nuevo). Si piensas cerrar sesión definitivamente, exporta antes una copia de seguridad.</p></details>
+
+    <details><summary>Mis importes cambiaron de formato tras cambiar la región.</summary>
+    <p>Las fechas y el formato de los números siguen la <strong>Región</strong> del dispositivo; la moneda sigue a cada presupuesto (<strong>Ajustes → Presupuesto → Moneda</strong>). Tus valores no cambian, solo el formato.</p></details>
 
     <details><summary>El widget parece desactualizado.</summary>
-    <p>Los widgets se actualizan periódicamente. Abre la app una vez para forzar la actualización, o quita y vuelve a añadir el widget si sigue desactualizado.</p></details>
+    <p>Abre Remainders una vez — actualiza el widget. Los widgets también se actualizan solos a lo largo del día.</p></details>
 
-    <details><summary>¿Remainders depende de la app Recordatorios de Apple?</summary>
-    <p>Sí. Remainders está construido sobre el framework <strong>EventKit</strong> de Apple y la app <strong>Recordatorios</strong>, que son proporcionados y mantenidos por Apple. Guardar tus datos, sincronizarlos entre dispositivos (vía iCloud), programar recurrencias y entregar notificaciones lo hace Recordatorios/iCloud — no Remainders. Si Apple cambia cómo funciona eso, o si Recordatorios o iCloud tienen algún problema, puede afectar a la app. Mantenemos Remainders actualizado para funcionar bien con las versiones más recientes del sistema.</p></details>
+    <details><summary>¿Puedo bloquear la app con Face ID?</summary>
+    <p>Sí, con iOS: mantén pulsado el icono de Remainders → <strong>Requerir Face ID</strong>.</p></details>
 
     <h2>Novedades</h2>
 
-    <!-- 1.2: push (= publish) only after 1.2 is live on the App Store. -->
-    <details><summary>Versión 1.2</summary>
+    <details><summary>Versión 2.0 — noviembre de 2026</summary>
+    <p>Un Remainders totalmente nuevo: rediseñado, mucho más rápido, y tus datos ahora se sincronizan con tu propio iCloud privado en lugar de la app Recordatorios.</p>
     <ul>
-      <li>Compras en cuotas: cada cuota es un movimiento en su propio mes (TV 3/10), con Adelantar y opciones seguras para eliminar.</li>
-      <li>Estados de cuenta de la tarjeta: define el cierre y el vencimiento de la tarjeta, y sus compras, cuotas y suscripciones entran en un estado de cuenta por mes — una fila y un recordatorio; págalo línea por línea o todo de una vez.</li>
-      <li>Un nuevo Filtro en todas las listas: recurrencia, categoría, fuente, método, estado, vencidos y fechas — muestra solo lo elegido u ocúltalo, con etiquetas que se pueden quitar. La Búsqueda sugiere filtros mientras escribes.</li>
-      <li>“Todas las cuentas” ahora es <strong>Cuentas</strong>, y “Todos los registros” ahora es <strong>Todos los movimientos</strong> — todo en un solo lugar, con filtros y período.</li>
-      <li>Previsión renovada: suma lo que está por venir desde hoy (hasta 2 años), muestra aparte los depósitos en metas, añade un gráfico de Saldo proyectado y abre las fechas de cualquier fila.</li>
-      <li>Listas más ordenadas: lo pagado y recibido se pliega, toca el aviso de vencidas para ver lo atrasado, desliza a la izquierda para editar y actúa sobre varios elementos a la vez desde el panel lateral.</li>
-      <li>Ingresos y Metas funcionan como Cuentas: anillo de % recibido, sección Recibidos plegada, eliminaciones confirmadas y Eliminar meta en el editor.</li>
-      <li>Vista de gráfico en Cuentas (ahora también en iPhone), tarjetas de gráficos más claras en el Resumen del iPhone, animaciones suaves y muchas mejoras.</li>
+      <li>iPhone, iPad y Mac, siempre sincronizados, sin registro.</li>
+      <li>Nuevas pestañas: Inicio, Resumen, Gráficos y Calendario.</li>
+      <li>Calendario: cada cuenta, ingreso y depósito de meta en su día.</li>
+      <li>Gráficos: a dónde va tu dinero, y una Previsión hasta cuatro años por delante.</li>
+      <li>Tarjetas de crédito: compras, cuotas y suscripciones en un solo estado de cuenta mensual.</li>
+      <li>Planes de cuotas y de pago de tiendas, con Adelantar.</li>
+      <li>Paga una cuenta variable por su importe real; las siguientes mantienen tu estimación.</li>
+      <li>Paga, edita u omite cualquier cuenta futura.</li>
+      <li>Presupuestos separados para el hogar, un viaje o un negocio, cada uno en su moneda.</li>
+      <li>Filtros, búsqueda, notas, y una copia de seguridad que guardas en Archivos.</li>
+      <li>¿Ya usabas Remainders? Trae tu lista de Recordatorios con un toque.</li>
     </ul></details>
 
     <details><summary>Versión 1.1 — octubre de 2026</summary>
     <ul>
-      <li>Optimizado para iPhone Duo: abierto, ve tu lista y el editor lado a lado; cerrado, todo cabe en la pantalla exterior — y sigues en la misma pantalla al abrirlo o cerrarlo.</li>
-      <li>Edita cuentas, ingresos y metas en un panel lateral en Mac, iPad, iPhone Duo y los iPhone Pro Max y Plus en horizontal: selecciona una para ver su estado, marcarla como pagada y editarla ahí mismo, y ciérralo con un toque o clic.</li>
-      <li>Nuevo gráfico “A dónde va tu ingreso” en el Resumen, que muestra lo que queda después de tus cuentas.</li>
-      <li>Previsión más precisa: los depósitos de una meta se detienen cuando se alcanza.</li>
-      <li>Tus listas de Remainders ahora aparecen primero al elegir una lista.</li>
-      <li>El Diagnóstico te ayuda a revisar las notificaciones de Recordatorios.</li>
+      <li>Optimizado para iPhone Duo: desplegado, ve tu lista y el editor lado a lado; plegado, todo cabe en la pantalla exterior — y sigues en la misma pantalla al plegar o desplegar.</li>
+      <li>Edita cuentas, ingresos y metas en un panel lateral en Mac, iPad, iPhone Duo y en los iPhone Pro Max y Plus en horizontal — selecciona uno para ver su estado, marcarlo como pagado y editarlo ahí mismo, y ciérralo con un toque o clic.</li>
+      <li>Nuevo gráfico “A dónde van tus ingresos” en Resumen, que muestra lo que queda después de tus cuentas.</li>
+      <li>Previsión más precisa: los depósitos se detienen cuando la meta está cubierta.</li>
+      <li>Tus listas de Remainders aparecen primero al elegir una lista.</li>
+      <li>El Diagnóstico ayuda a comprobar las notificaciones de Recordatorios.</li>
       <li>Siri y Atajos ahora entienden portugués y español.</li>
-      <li>Doble clic para editar en Mac, nuevo aspecto Liquid Glass, además de muchas mejoras y correcciones.</li>
+      <li>Doble clic para editar en Mac, un aspecto Liquid Glass renovado, y muchas mejoras y correcciones.</li>
     </ul></details>
 
     <details><summary>Versión 1.0.1 — octubre de 2026</summary>
-    <p>Corregimos los totales que se muestran junto a cada categoría y método de pago, que podían incluir facturas de otros ciclos. Ahora coinciden con el ciclo actual.</p></details>
+    <p>Corregidos los totales junto a cada categoría y método de pago, que podían incluir cuentas de otros ciclos. Ahora coinciden con el ciclo actual.</p></details>
 
     <details><summary>Versión 1.0 — 13 de octubre de 2026</summary>
     <p>Primera versión de Remainders para iPhone, iPad y Mac.</p></details>
@@ -467,21 +494,21 @@
     <hr />
     <h2>Política de Privacidad</h2>
     <div class="card">
-      <p class="muted"><strong>Fecha de entrada en vigor:</strong> Septiembre de 2026</p>
-      <p>Remainders ("la app") está diseñado para ser privado por defecto.</p>
+      <p class="muted"><strong>Fecha de entrada en vigor:</strong> noviembre de 2026</p>
+      <p>Remainders (“la app”) no recopila, almacena ni comparte ningún dato personal.</p>
       <ul>
-        <li><strong>Sin recopilación de datos.</strong> No recopilamos, transmitimos, vendemos ni compartimos ninguna información personal o financiera. La app no tiene cuentas ni servidores operados por nosotros.</li>
-        <li><strong>Dónde viven tus datos.</strong> Todo el contenido que creas se guarda como tareas en la app Recordatorios de Apple, en tu dispositivo, y se sincroniza mediante tu cuenta personal de iCloud (regida por la <a href="https://www.apple.com/legal/privacy/">Política de Privacidad de Apple</a>). No tenemos acceso a él.</li>
-        <li><strong>Permisos.</strong> La app solicita acceso a Recordatorios únicamente para leer y escribir las cuentas, ingresos y metas que introduces. Puedes revocarlo cuando quieras en los Ajustes del sistema.</li>
-        <li><strong>Sin seguimiento ni anuncios.</strong> La app no contiene analíticas, publicidad ni SDK de seguimiento de terceros.</li>
-        <li><strong>Menores.</strong> La app no recopila datos de nadie de forma intencional, incluidos los menores.</li>
+        <li><strong>Dónde viven tus datos.</strong> Todo lo que creas se guarda en tu dispositivo y en el espacio propio de Remainders en tu cuenta personal de iCloud (Apple CloudKit, base de datos privada), bajo la <a href="https://www.apple.com/legal/privacy/es/">Política de Privacidad de Apple</a>. No tenemos acceso a ellos.</li>
+        <li><strong>Sin cuentas, sin rastreo.</strong> Sin inicio de sesión, analíticas, publicidad ni servicios de terceros.</li>
+        <li><strong>Permisos.</strong> Notificaciones, para recordarte los vencimientos. Recordatorios, solo si eliges traer una lista de Remainders 1.x — se lee una vez y nunca se modifica.</li>
+        <li><strong>Eliminar tus datos.</strong> Borra un presupuesto en Ajustes, o quita los datos de la app de iCloud (Cuenta de Apple → iCloud → Gestionar almacenamiento → Remainders). Cerrar sesión de iCloud en un dispositivo quita la copia sincronizada de ese dispositivo.</li>
+        <li><strong>Menores.</strong> La app no recopila a sabiendas datos de nadie, incluidos los menores.</li>
       </ul>
-      <p>Si tienes preguntas sobre privacidad, contáctanos: <a href="mailto:remainders.support@icloud.com">remainders.support@icloud.com</a>.</p>
+      <p>Si tienes cualquier pregunta sobre privacidad, escribe a <a href="mailto:remainders.support@icloud.com">remainders.support@icloud.com</a>.</p>
     </div>
 
     <h2>Aviso legal</h2>
     <div class="card">
-      <p>Remainders depende de la app <strong>Recordatorios</strong>, del framework <strong>EventKit</strong> y de <strong>iCloud</strong> de Apple para guardar tus datos, sincronizarlos entre dispositivos, programar elementos recurrentes y entregar notificaciones. Estos servicios son proporcionados y controlados por Apple. Remainders no se responsabiliza de la pérdida de datos, retrasos o conflictos de sincronización, notificaciones no entregadas o duplicadas, u otros problemas causados por los servicios de Apple, iCloud o cambios en iOS, iPadOS o macOS. Para cualquier cosa importante, guarda tus propios registros aparte.</p>
+      <p>Remainders depende de <strong>iCloud</strong> de Apple (CloudKit) para sincronizar tus datos entre dispositivos y del sistema para entregar notificaciones. Estos servicios son proporcionados y controlados por Apple. Remainders no se responsabiliza de la pérdida de datos, retrasos o conflictos de sincronización, o notificaciones no entregadas causados por los servicios de Apple o por cambios en iOS, iPadOS o macOS. Para cualquier cosa importante, guarda una copia de seguridad (Ajustes → Copia de seguridad) y tus propios registros.</p>
     </div>
   </div>
 
